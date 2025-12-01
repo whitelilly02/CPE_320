@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --greenOriginalBottom: linear-gradient(to bottom, #304B38, #249031);
+    --greenOriginalRight: linear-gradient(to right, #305038, #278133);
+    --fontColorBlack: rgb(0, 0, 0);
+    --fontColorWhite: rgb(255, 255, 255);
+}
+
+/* sidebar */
+
+.sidebarDoctor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    background: var(--greenOriginalBottom);
+    height: 100vh;
+    width: 350px;
+}
+
+.sidebarDoctor h1 {
+    font-size: 50px;
+    color: var(--fontColorWhite);
+    margin: 40px 0;
+}
+
+.sidebarDoctor ul {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 100%;
+}
+
+.sidebarDoctor ul li.active a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--fontColorWhite);
+    display: block;
+    padding: 20px 40px;
+}
+
+.sidebarDoctor ul li.logout a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--fontColorBlack);
+    display: block;
+    padding: 20px 40px;
+}
+
+.sidebarDoctor ul li.active a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.selectMenu {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* border-right: 7px solid #60DB83; */
+}
+
+.sidebarDoctor ul li.logout {
+    margin-top: auto;
+    background-color: #E6FFED;
+    opacity: 50%;
+}

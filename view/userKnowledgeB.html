@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Knowledge & Info</title>
+	<link rel="stylesheet" href="css/userKnowledgeB.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="userKnowledgeBPage">
+		<aside class="sidebarUser" id="sidebarUser"></aside>
+
+		<main class="main-content knowledge2-content">
+			<header class="knowledge2-header">
+				<h1>Knowledge&amp;Info</h1>
+				<div class="knowledge2-header-actions">
+					<div class="knowledge2-header-separator"></div>
+					<div class="knowledge2-header-profile">
+						<img src="img/Icon (1).png" alt="ผู้ใช้งาน" class="knowledge2-header-avatar">
+						<button type="button" class="knowledge2-header-chip">ชื่อผู้ใช้งาน</button>
+					</div>
+				</div>
+			</header>
+
+			<section class="knowledge2-section">
+				<div class="knowledge2-card">
+					<div class="knowledge2-card-head">
+						<div class="knowledge2-tabs">
+							<button type="button" onclick="window.location.href='userKnowledgeA.html'" class="knowledge2-tab">ข้อมูลบริการตรวจ</button>
+							<button type="button" onclick="window.location.href='userKnowledgeB.html'" class="knowledge2-tab is-active">กฎการแปลผล</button>
+							<button type="button" onclick="window.location.href='userKnowledgeC.html'" class="knowledge2-tab">บทความและงานวิจัย</button>
+						</div>
+						<button type="button" class="knowledge2-card-icon" aria-label="เพิ่มเติม">
+							<img onclick="window.location.href='userDashboard.html'" src="img/Icon.png" alt="เพิ่มเติม" class="icon-image">
+						</button>
+					</div>
+
+					<div class="knowledge2-list">
+						<article class="knowledge2-item">
+							<span class="knowledge2-item-text">กฎการแปลผล</span>
+							<button type="button" class="knowledge2-download" aria-label="ดาวน์โหลด">
+								<img src="img/download.png" alt="ดาวน์โหลด" class="knowledge2-download-icon">
+							</button>
+						</article>
+						<article class="knowledge2-item">
+							<span class="knowledge2-item-text">ฐานข้อมูล genotype</span>
+							<button type="button" class="knowledge2-download" aria-label="ดาวน์โหลด">
+								<img src="img/download.png" alt="ดาวน์โหลด" class="knowledge2-download-icon">
+							</button>
+						</article>
+						<article class="knowledge2-item">
+							<span class="knowledge2-item-text">รายการเตือนความเสี่ยง HLA-ยา</span>
+							<button type="button" class="knowledge2-download" aria-label="ดาวน์โหลด">
+								<img src="img/download.png" alt="ดาวน์โหลด" class="knowledge2-download-icon">
+							</button>
+						</article>
+						<article class="knowledge2-item">
+							<span class="knowledge2-item-text">คำแนะนำการปรับขนาดยา</span>
+							<button type="button" class="knowledge2-download" aria-label="ดาวน์โหลด">
+								<img src="img/download.png" alt="ดาวน์โหลด" class="knowledge2-download-icon">
+							</button>
+						</article>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<script src="js/sidebarUser.js"></script>
+</body>
+
+</html>

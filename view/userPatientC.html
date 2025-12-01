@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ผู้ป่วย</title>
+	<link rel="stylesheet" href="css/userPatientC.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="userPatientCPage">
+		<aside class="sidebarUser" id="sidebarUser"></aside>
+
+		<main class="main-content patient-content">
+			<header class="patient-header">
+				<h1>ผู้ป่วย</h1>
+				<div class="patient-header-actions">
+					<div class="header-separator"></div>
+					<div class="patient-header-profile">
+						<img src="img/Icon (1).png" alt="ผู้ใช้งาน" class="patient-header-avatar">
+						<button type="button" class="patient-header-chip">ชื่อผู้ใช้งาน</button>
+					</div>
+				</div>
+			</header>
+
+			<section class="patient-layout">
+				<div class="patient-card patient-card--orders">
+					<header class="patient-card-head">
+						<h2>รายการตรวจ</h2>
+					</header>
+					<div class="orders-table-wrapper">
+						<table class="patient-orders">
+							<thead>
+								<tr>
+									<th>รหัส<br>การตรวจ</th>
+									<th>ชื่อการตรวจ</th>
+									<th>สิ่งที่ตรวจ</th>
+									<th>วันที่ส่งตรวจ</th>
+									<th>สถานะการตรวจ</th>
+									<th>รายละเอียดผลตรวจ</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>400094</td>
+									<td>Genomic DNA Extraction</td>
+									<td>Blood/EDTA</td>
+									<td>20/10/2025</td>
+									<td><span class="status-badge status-badge--orange">รอดำเนินการ</span></td>
+									<td><button type="button" class="outline-button">เลือก</button></td>
+								</tr>
+								<tr>
+									<td>410028</td>
+									<td>PGx for Acetaminophen (CYP2D6)</td>
+									<td>Blood/EDTA</td>
+									<td>20/10/2025</td>
+									<td><span class="status-badge status-badge--orange">รอดำเนินการ</span></td>
+									<td><button onclick="window.location.href='userPatientCYP2D6.html'" type="button" class="outline-button">เลือก</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="patient-side">
+					<div class="patient-card patient-card--info">
+						<header class="patient-card-head">
+							<h2>ข้อมูลผู้ป่วย</h2>
+						</header>
+						<ul class="patient-info-list">
+							<li><span class="label">ชื่อ-นามสกุล (Name)</span><span class="value">นายบาส ทดสอบ</span>
+							</li>
+							<li><span class="label">เลขประจำตัว (HN)</span><span class="value">HN000011</span></li>
+							<li><span class="label">เพศ (Gender)</span><span class="value">ชาย</span></li>
+							<li><span class="label">อายุ (Age)</span><span class="value">21 ปี</span></li>
+							<li><span class="label">เชื้อชาติ (Ethnicity)</span><span class="value">ไทย</span></li>
+							<li><span class="label">เบอร์ติดต่อ (Phone/Fax)</span><span
+									class="value">090-000-0000</span></li>
+							<li><span class="label">แพทย์ (Physician)</span><span class="value">นพ.อธิสราพงษ์
+									ชุ่มอ้อ</span></li>
+							<li><span class="label">น้ำหนัก</span><span class="value">79 กิโลกรัม</span></li>
+							<li><span class="label">ส่วนสูง</span><span class="value">178 เซนติเมตร</span></li>
+						</ul>
+					</div>
+
+					<div class="patient-card patient-card--orders-list">
+						<header class="patient-card-head">
+							<h2>ใบสั่งตรวจ</h2>
+						</header>
+						<table class="patient-order-summary">
+							<thead>
+								<tr>
+									<th>รหัสการตรวจ</th>
+									<th>ชื่อการตรวจ</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>400094</td>
+									<td>Genomic DNA Extraction</td>
+									<td><img src="img/download.png" alt="ดาวน์โหลด" class="download-icon"></td>
+								</tr>
+								<tr>
+									<td>410028</td>
+									<td>PGx for Acetaminophen (CYP2D6)</td>
+									<td><img src="img/download.png" alt="ดาวน์โหลด" class="download-icon"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<script src="js/sidebarUser.js"></script>
+</body>
+
+</html>

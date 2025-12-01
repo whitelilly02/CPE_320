@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Knowledge & Info</title>
+	<link rel="stylesheet" href="css/userKnowledgeA.css">
+</head>
+<body>
+	<div class="userKnowledgeAPage">
+		<aside class="sidebarUser" id="sidebarUser"></aside>
+
+		<main class="main-content knowledge-content">
+			<header class="knowledge-header">
+				<h1>Knowledge&amp;Info</h1>
+				<div class="knowledge-header-actions">
+					<div class="knowledge-header-separator"></div>
+					<div class="knowledge-header-profile">
+						<img src="img/Icon (1).png" alt="ผู้ใช้งาน" class="knowledge-header-avatar">
+						<button type="button" class="knowledge-header-chip">ชื่อผู้ใช้งาน</button>
+					</div>
+				</div>
+			</header>
+
+			<section class="knowledge-section">
+				<div class="knowledge-card">
+					<div class="knowledge-card-head">
+						<div class="knowledge-tabs">
+							<button type="button" onclick="window.location.href='userKnowledgeA.html'" class="knowledge-tab is-active">ข้อมูลบริการตรวจ</button>
+							<button type="button" onclick="window.location.href='userKnowledgeB.html'" class="knowledge-tab">กฎการแปลผล</button>
+							<button type="button" onclick="window.location.href='userKnowledgeC.html'" class="knowledge-tab">บทความและงานวิจัย</button>
+						</div>
+						<button type="button" class="knowledge-card-icon" aria-label="เพิ่มเติม">
+							<img onclick="window.location.href='userDashboard.html'" src="img/Icon.png" alt="เพิ่มเติม" class="icon-image">
+						</button>
+					</div>
+					<div class="knowledge-list">
+						<article class="knowledge-item">
+							<div class="knowledge-item-text">
+								<h3>ดาวน์โหลดใบส่งตรวจ</h3>
+							</div>
+							<button type="button" class="download-button" aria-label="ดาวน์โหลด">
+								<img src="img/download.png" alt="ดาวน์โหลด" class="download-icon">
+							</button>
+						</article>
+						<article class="knowledge-item">
+							<div class="knowledge-item-text">
+								<h3>TAT (SLA) ของแต่ละการตรวจ</h3>
+							</div>
+							<button type="button" class="download-button" aria-label="ดาวน์โหลด">
+								<img src="img/download.png" alt="ดาวน์โหลด" class="download-icon">
+							</button>
+						</article>
+						<article class="knowledge-item">
+							<div class="knowledge-item-text">
+								<h3>ข้อปฏิบัติก่อนตรวจ, ชนิดส่งตรวจ, ปริมาณ</h3>
+							</div>
+							<button type="button" class="download-button" aria-label="ดาวน์โหลด">
+								<img src="img/download.png" alt="ดาวน์โหลด" class="download-icon">
+							</button>
+						</article>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<script src="js/sidebarUser.js"></script>
+</body>
+</html>

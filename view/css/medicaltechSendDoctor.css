@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --greenOriginalBottom: linear-gradient(to bottom, #305038, #278133);
+    --greenOriginalRight: linear-gradient(to right, #305038, #278133);
+    --fontColorBlack: rgb(0, 0, 0);
+    --fontColorWhite: rgb(255, 255, 255);
+    --backgroundColor: #E6FFED;
+    --backgroundColorWhite: #ffff;
+}
+
+/* headerSetting */
+
+.medicaltechSendPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--backgroundColor);
+    margin-left: 350px;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 40px;
+    background-color: var(--backgroundColorWhite);
+}
+
+.header h1 {
+    color: var(--fontColorBlack);
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    border-left: 1px solid #000;
+}
+
+.newPatients {
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    background: #60DB83;
+    color: var(--fontColorBlack);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+/* ============ Main content เนื้อหา============ */
+
+.patientBig {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.Plus-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.patient-box {
+    padding: 20px;
+    border: 1px solid #000;
+    background-color: #FFFFFF;
+}
+
+.panel-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.panel-head {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.paper-title {
+    font-size: 24px;
+}
+
+.btn-print {
+    border: none;
+    /* ❌ เอาขอบออก */
+    outline: none;
+    /* ❌ เอาเส้นขอบเวลา focus ออก */
+    color: #fff;
+    width: 120px;
+    height: 30px;
+    border-radius: 15px;
+    /* ✅ โค้งมนแบบในภาพ */
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.04s ease;
+    background: linear-gradient(to right, #314B38, #1DBE32);
+}
+
+.paper-wrap {
+    background: #F2F2F2;
+    border: 1px solid #000;
+}
+
+.paper {
+    background: #fff;
+    padding: 25px;
+}
+
+.paper-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.paper-sep {
+    margin-top: 5px;
+    background-color: #000;
+}
+
+.paper-title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.paper-row {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.date .d {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.name-hn {
+    font-size: 16px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    /* จัดให้อยู่ระดับเดียวกัน */
+    gap: 180px;
+    /* ปรับระยะห่างระหว่างข้อความตามต้องการ */
+}
+
+
+.order-title {
+    margin-top: 5px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.order {
+    display: flex;
+    align-items: center;
+}
+
+.order-table {
+    margin-left: 10px;
+    width: 620px;
+    height: 130px;
+    border: 1px solid #F3F3F3;
+    background-color: #F3F3F3;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, .12);
+    padding: 14px 22px 16px;
+    /* เว้นซ้าย-ขวาเพื่อให้เส้นไม่ชนขอบ */
+    position: relative;
+}
+
+/* ตาราง 2 คอลัมน์: ซ้าย = รหัส, ขวา = ชื่อการตรวจ */
+.order-table .thead,
+.order-table .tr {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    /* ปรับ 240-280 ได้ตามหน้า */
+    align-items: center;
+    font-size: 16px;
+}
+
+.order-table .th-code,
+.order-table .th-name {
+    padding: 8px 10px;
+    border-bottom: 1px solid #000;
+    /* เส้นแนวนอนใต้หัวตาราง */
+    position: relative;
+    /* เพิ่มส่วนนี้เพื่อจัดให้อยู่ตรงกลางแนวตั้งและแนวนอน */
+    display: flex;
+    align-items: center;
+    /* จัดให้อยู่ตรงกลางแนวตั้ง */
+}
+
+/* ----- เส้นแนวตั้งตรงกลาง ----- */
+.order-table .td.code::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    bottom: -10px;
+    left: 140px;
+    width: 0.5px;
+    background: #000;
+    pointer-events: none;
+}
+
+
+/* แถวข้อมูล */
+.order-table .td {
+    padding: 5px 5px;
+    /* ระยะห่างข้อความบน–ล่าง */
+    border-bottom: 1px solid #000;
+    /* เส้นแนวนอนคั่นแถว */
+    position: relative;
+}
+
+/* รหัสการตรวจ (คอลัมน์ซ้าย) */
+.order-table .td.code {
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+}
+
+/* ชื่อการตรวจ (คอลัมน์ขวา) */
+.order-table .td.name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.medicine-note {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* ระยะห่างระหว่างช่องบน-ล่าง */
+    margin-top: -30px;
+    margin-left: 35px;
+}
+
+.note-k {
+    font-size: 14px;
+}
+
+/* ===== ช่องกรอก (กล่องรายละเอียด) ===== */
+.input {
+    width: 328px;
+    height: 65px;
+    background: #fdfdfd;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 14px 18px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    outline: none;
+}
+
+.input::placeholder {
+    color: #b5b5b5;
+    font-size: 12px;
+}
+
+.box-infor {
+    margin-top: 2px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.infor-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.infor-grid {
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    /* ซ้าย/ขวา */
+    column-gap: 40px;
+    row-gap: 4px;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.sign-row {
+    display: flex;
+    justify-content: flex-end;
+    /* ไปชิดขวา */
+    gap: 20px;
+    /* ระยะห่างเส้นลายเซ็นสองช่อง */
+    margin-top: 50px;
+}
+
+.sign {
+    text-align: center;
+}
+
+.sign .line {
+    width: 178px;
+    height: 1px;
+    background: #000;
+    margin-bottom: 6px;
+    /* ระยะระหว่างเส้นกับคำอธิบาย */
+}
+
+.label {
+    font-size: 14px;
+}
+
+@media print {
+
+    /* กระดาษแนวนอน A4 + ขอบ */
+    @page {
+        size: A4 landscape;
+        margin: 10mm 12mm;
+    }
+
+    /* ซ่อนทุกอย่างในหน้า (ยังคงกินที่อยู่) */
+    body * {
+        visibility: hidden !important;
+    }
+
+    /* แสดงเฉพาะโซนที่จะพิมพ์ */
+    #print-area,
+    #print-area * {
+        visibility: visible !important;
+    }
+
+    /* วาง print-area ให้เต็มหน้า */
+    #print-area {
+        position: fixed;
+        /* หรือ absolute ก็ได้ ถ้าไม่มี position อื่นบัง */
+        inset: 0;
+        /* top:0; right:0; bottom:0; left:0; */
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        background: #fff !important;
+    }
+
+    /* กันบล็อกสำคัญถูกตัดหน้า */
+    .paper,
+    .order,
+    .order-table,
+    .box-infor,
+    .sign-row {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* ให้สี/เส้นคมตอนพิมพ์ */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* ซ่อนปุ่มพิมพ์เอง */
+    .btn-print {
+        display: none !important;
+    }
+}

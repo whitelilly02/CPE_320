@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --greenOriginalBottom: linear-gradient(to bottom, #305038, #278133);
+    --greenOriginalRight: linear-gradient(to right, #305038, #278133);
+    --fontColorBlack: rgb(0, 0, 0);
+    --fontColorWhite: rgb(255, 255, 255);
+    --backgroundColor: #E6FFED;
+    --backgroundColorWhite: #ffff;
+}
+
+/* headerSetting */
+
+.medicaltechSendPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--backgroundColor);
+    margin-left: 350px;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 40px;
+    background-color: var(--backgroundColorWhite);
+}
+
+.header h1 {
+    color: var(--fontColorBlack);
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    border-left: 1px solid #000;
+}
+
+.newPatients {
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    background: #60DB83;
+    color: var(--fontColorBlack);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+/* ============ Main content เนื้อหา============ */
+
+.reportAll {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.Plus-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.content-box-one {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 0 30px;
+}
+
+.box-left {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    margin-top: 25px;
+    width: 930px;
+    height: 100px;
+    background: linear-gradient(to right, #3a4a3f, #1a9e3e);
+    border-radius: 8px;
+    padding: 14px 20px;
+    gap: 12px 5px;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* คอลัมน์ซ้าย→ขวาให้เป็นแนวตั้งในแต่ละคอลัมน์ */
+.column1,
+.column2,
+.column3,
+.column4 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.box-left label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.box-left .label-mid {
+    width: auto;
+    margin: 0 6px 0 4px;
+    font-weight: 600;
+}
+
+.username-group input[type="text"] {
+    width: 200px;
+    height: 30px;
+    padding: 0 12px;
+    border-radius: 10px;
+}
+
+#date-start,
+#date-end {
+    width: 80px;
+    height: 30px;
+    padding: 0 12px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+#position,
+#time-start {
+    width: 110px;
+    height: 30px;
+    padding: 0 12px;
+    border-radius: 10px;
+}
+
+#level,
+#time-end {
+    width: 110px;
+    height: 30px;
+    padding: 0 12px;
+    border-radius: 10px;
+}
+
+#action,
+#page-name {
+    width: 130px;
+    height: 30px;
+    padding: 0 12px;
+    border-radius: 10px;
+}
+
+.box-right2 {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+    /* ให้ปุ่มกว้างเต็มกล่อง */
+}
+
+.search-button {
+    width: 215px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid #8F8C8C;
+    background-color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search-button:hover {
+    background-color: #F2F2F2;
+    /* สีเทาอ่อนตอนชี้ */
+    border-color: #6e6e6e;
+    /* ขอบเข้มขึ้นนิดหน่อย */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+    /* ยกขึ้นเล็กน้อย */
+}
+
+.clear-button {
+    width: 215px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid #8F8C8C;
+    background-color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clear-button:hover {
+    background-color: #F2F2F2;
+    border-color: #6e6e6e;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.report-section {
+    width: 79%;
+    min-height: 480px; /* เปลี่ยนจาก height เป็น min-height */
+    height: auto; /* ให้ขยายตามเนื้อหา */
+    padding: 0 32px 20px 32px; /* เพิ่ม padding-bottom */
+    margin: 30px 0;
+    border-radius: 12px;
+    border: 1px solid #000;
+    background-color: #FFFFFF;
+    overflow-y: auto; /* เพิ่ม scrollbar ถ้าเนื้อหายาวเกินไป */
+}
+
+/* ตารางด้านใน */
+.report-table table {
+    margin-top: 15px;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* ให้คอลัมน์ขยายตามเนื้อหา */
+    /* ให้เส้นคั่นชิดกันสวยๆ */
+}
+
+/* หัวตาราง */
+.report-table thead th {
+    padding: 10px 12px;
+    color: #000;
+    /* เทาเข้ม */
+    font-weight: bold;
+    border-bottom: 2px solid #e5e7eb;
+    /* เส้นคั่นหัวตาราง */
+    white-space: nowrap;
+    min-width: 80px; /* กำหนดความกว้างขั้นต่ำ */
+}
+
+/* แถวข้อมูล */
+.report-table tbody td {
+    padding: 10px 12px;
+    color: #1f2937;
+    border-bottom: 2px solid #e5e7eb;
+    /* เส้นคั่นแถวจาง ๆ */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 200px; /* กำหนดความกว้างสูงสุดถ้าต้องการ */
+}
+
+/* จัดแนวคอลัมน์ให้คล้ายภาพ: NO. และปุ่มชิดกลาง */
+.report-table thead th:first-child,
+.report-table tbody td:first-child,
+.report-table thead th:last-child,
+.report-table tbody td:last-child {
+    text-align: center;
+    font-size: 18px;
+}
+
+/* จัดตำแหน่งคอลัมน์ให้ชิดกลาง */
+.report-table thead th:nth-child(2),
+.report-table tbody td:nth-child(2),
+.report-table thead th:nth-child(3),
+.report-table tbody td:nth-child(3) {
+    text-align: center;
+    /* ✅ จัดข้อความให้อยู่กึ่งกลางแนวนอน */
+    font-size: 14px;
+}
+
+/* คอลัมน์สถานะ/Genotype ให้กลางนิด ๆ */
+.report-table thead th:nth-child(4),
+.report-table tbody td:nth-child(4),
+.report-table thead th:nth-child(5),
+.report-table tbody td:nth-child(5) {
+    text-align: center;
+    font-size: 14px;
+}
+
+.report-table tbody td:nth-child(6) {
+  text-align: center;          /* จัดแนวนอน */
+  vertical-align: middle;      /* ✅ จัดแนวตั้งให้อยู่ตรงกลาง */
+}
+
+/* Badge สถานะ (สีชมพูม่วงเล็ก ๆ) */
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 14px;
+    line-height: 1;
+    background: #FFF4E5;
+    /* 🔸 สีพื้นส้มอ่อน (พาสเทล) */
+    color: #FF9317;
+    /* 🔸 ตัวอักษรส้มเข้ม */
+    border: 1px solid #FF9317;
+    /* 🔸 เส้นขอบส้ม */
+    border-radius: 8px;
+}
+
+/* ปุ่ม “เลือก” สีเทาอ่อนเล็ก ๆ */
+.muted-btn {
+    width: 100px;
+    height: 26px;
+    background: #e9ecef;
+    border: 1px solid #BBBBBB;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .15s ease, transform .04s ease;
+}
+
+.select-btn{
+    width: 100px;
+    height: 26px;
+    background: #e9ecef;
+    border: 1px solid #BBBBBB;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .15s ease, transform .04s ease;
+}
+
+#date-start{
+    margin-left: 20px;
+}
+
+#time-end{
+    margin-left: 10px;
+}
+
+#page-name{
+    margin-left: 73px;
+}

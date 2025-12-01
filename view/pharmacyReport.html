@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Explicit CSP meta for file:// scheme pages (headers don't apply to local file loads) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.supabase.co; img-src 'self' data:; object-src 'none';">
+    <title>รายงานผล</title>
+    <link rel="stylesheet" href="css/pharmacyReport.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="pharmacyReportPage">
+        <!-- Sidebar -->
+        <div class="sidebarPharmacy" id="sidebarPharmacy"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <p>รายงานผล</p>
+                <div class="boxRight">
+                    <div class="divider"></div>
+                    <a href="#" class="icon-link">
+                        <img src="img/User.png" alt="user" class="user-img">
+                    </a>
+                    <button class="newPatients">
+                        ชื่อผู้ใช้งาน
+                    </button>
+                </div>
+            </header>
+
+            <div class="tab">
+                <div class="content-box-one">
+                    <div class="box-left">
+
+                        <!-- แถวที่ 1 -->
+                        <div class="filter-item">
+                            <label>ชื่อผู้ใช้</label>
+                            <input type="text" placeholder="Value">
+                        </div>
+
+                        <div class="filter-item">
+                            <label>ตำแหน่ง</label>
+                            <select>
+                                <option selected>ทั้งหมด</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-item">
+                            <label>ระดับ</label>
+                            <select>
+                                <option selected>ทั้งหมด</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-item">
+                            <label>การทำงานของผู้ใช้</label>
+                            <select>
+                                <option selected>ทั้งหมด</option>
+                            </select>
+                        </div>
+
+                        <!-- แถวที่ 2 -->
+                        <div class="filter-item">
+                            <label>วันที่</label>
+                            <select>
+                                <option selected>ทุกวัน</option>
+                            </select>
+                            <label class="small">ถึง</label>
+                            <select>
+                                <option selected>-----</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-item">
+                            <label>ช่วงเวลา</label>
+                            <select>
+                                <option selected>ทุกวัน</option>
+                            </select>
+                            <label class="small">ถึง</label>
+                            <select>
+                                <option selected>ทุกวัน</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-item">
+                            <label>ชื่อหน้า</label>
+                            <select>
+                                <option selected>ทั้งหมด</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-item"></div>
+                    </div>
+
+                    <div class="box-right2">
+                        <button class="search-button">ค้นหา</button>
+                        <button class="clear-button">ล้างคำค้นหาทั้งหมด</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ตารางรายงาน -->
+            <section class="report-section">
+                <div class="report-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>NO.</th>
+                                <th>ชื่อ-นามสกุล</th>
+                                <th>เลขประจำตัว(HN)</th>
+                                <th>สถานะการตรวจ</th>
+                                <th>Inspection Code</th>
+                                <th>ดูผลตรวจ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="report-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/sidebarPharmacy.js"></script>
+    <script src="js/pharmacyReport.js"></script>
+</body>
+
+</html>

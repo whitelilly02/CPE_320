@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดผลตรวจ</title>
+    <link rel="stylesheet" href="css/pharmacyReportTPMT.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="pharmacyReportTPMTPage">
+
+        <aside class="sidebarPharmacy" id="sidebarPharmacy"></aside>
+
+        <main class="main-content patient2-content">
+
+            <header class="patient2-header">
+                <h1>ผู้ป่วย</h1>
+
+                <div class="patient2-header-actions">
+
+                    <div class="patient2-header-separator"></div>
+
+                    <div class="patient2-header-profile">
+                        <img src="img/User.png" class="patient2-header-avatar">
+                        <button class="patient2-header-chip">ชื่อผู้ใช้งาน</button>
+                    </div>
+                </div>
+            </header>
+
+            <section class="result-card">
+
+                <header class="result-card-head">
+                    <div class="result-card-title">
+                        <div class="result-card-icon-container">
+                            <img src="img/Icon.png" class="result-card-icon-img">
+                        </div>
+                        <h2>รายละเอียดผลตรวจ</h2>
+                    </div>
+
+                    <div class="verify-status">
+                        <div class="verify-item">
+                            <span class="verify-text">ผลการยืนยันจากเทคนิคการแพทย์ :</span>
+                            <span class="verify-dot green"></span>
+                        </div>
+                        <div class="verify-item">
+                            <span class="verify-text">ผลการยืนยันจากเภสัชกร :</span>
+                            <span class="verify-dot red"></span>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="result-card-body">
+
+                    <div class="result-meta">
+                        <span class="label">หมายเลขใบสั่งตรวจ :</span>
+                        <span class="value">TRO011</span>
+                    </div>
+
+                    <table class="result-info-table">
+                        <tr>
+                            <th>ชื่อ-นามสกุล (Name) :</th>
+                            <td><input type="text" class="field" value="นายเทส ทดสอบ"></td>
+
+                            <th>เลขประจำตัว (HN) :</th>
+                            <td><input type="text" class="field" value="HN000001"></td>
+                        </tr>
+
+                        <tr>
+                            <th>รหัสการตรวจ :</th>
+                            <td><input type="text" class="field" value="410028"></td>
+
+                            <th>ชนิดของยาที่ใช้ในการรักษา :</th>
+                            <td><input type="text" class="field" value=""></td>
+                        </tr>
+
+                        <tr>
+                            <th>ชื่อการตรวจ :</th>
+                            <td><input type="text" class="field" value=""></td>
+
+                            <th>ยาที่ผู้ป่วยได้รับในปัจจุบัน :</th>
+                            <td><input type="text" class="field" value=""></td>
+                        </tr>
+                    </table>
+
+                    <!-- ================= GENOTYPE BLOCK ================= -->
+                    <div class="geno-section">
+
+                        <div class="geno-row first-row">
+                            <div class="geno-left">
+                                <span class="geno-label">ยีนที่ตรวจ :</span>
+                                <span class="geno-text">TPMT</span>
+                            </div>
+                            <div class="geno-divider"></div>
+                            <div class="geno-right"></div>
+                        </div>
+
+                        <div class="geno-row">
+                            <div class="geno-left">
+                                <span class="geno-label">Genotype :</span>
+                                <span class="geno-text">TPMT*3C (719A&gt;G)</span>
+                            </div>
+                            <div class="geno-divider"></div>
+                            <div class="geno-right">
+                                <input type="text" class="geno-input">
+                            </div>
+                        </div>
+
+                        <div class="geno-row">
+                            <div class="geno-left">
+                                <span class="geno-label">Predicted Genotype :</span>
+                                <span class="geno-text"></span>
+                            </div>
+                            <div class="geno-divider"></div>
+                            <div class="geno-right"></div>
+                        </div>
+
+                        <div class="geno-row">
+                            <div class="geno-left">
+                                <span class="geno-label">Predicted Phenotype :</span>
+                                <span class="geno-text"></span>
+                            </div>
+                            <div class="geno-divider"></div>
+                            <div class="geno-right"></div>
+                        </div>
+
+                        <div class="geno-row">
+                            <div class="geno-left">
+                                <span class="geno-label">Therapeutic recommendation :</span>
+                                <span class="geno-text"></span>
+                            </div>
+                            <div class="geno-divider"></div>
+                            <div class="geno-right"></div>
+                        </div>
+
+                    </div>
+                    <!-- ================================================ -->
+
+                    <div class="result-card-footer">
+                        <div class="result-footer-left">
+                            <button class="btn-confirm">ยืนยันผลตรวจ</button>
+                            <button class="btn-revise">ส่งแก้ไขผลตรวจ</button>
+                        </div>
+
+                        <button class="print-button">พิมพ์ใบผลการตรวจ</button>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ===== Modal ส่งแก้ไขผลตรวจ ===== -->
+    <div id="revise-modal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <span class="modal-title">ส่งแก้ไขผล</span>
+                <button type="button" class="modal-close">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <label class="modal-label">กรุณาระบุรายละเอียดที่ต้องการให้แก้ไข</label>
+                <textarea class="modal-textarea" placeholder="พิมพ์ข้อความที่ต้องการแจ้งแก้ไข..."></textarea>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="modal-btn cancel">ยกเลิก</button>
+                <button type="button" class="modal-btn submit">ส่งแก้ไข</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const openBtn = document.querySelector('.btn-revise');
+            const modal = document.getElementById('revise-modal');
+            const textarea = modal.querySelector('.modal-textarea');
+            const closeBtns = modal.querySelectorAll('.modal-close, .modal-btn.cancel');
+
+            // เปิด modal เมื่อกด "ส่งแก้ไขผลตรวจ"
+            if (openBtn && modal) {
+                openBtn.addEventListener('click', function () {
+                    modal.classList.add('show');
+                    textarea.value = "";
+                    textarea.focus();
+                });
+            }
+
+            // ปิด modal เมื่อกด X หรือ ยกเลิก
+            closeBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    modal.classList.remove('show');
+                });
+            });
+
+            // คลิกพื้นหลังดำ ปิด modal
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                }
+            });
+
+            // กด "ส่งแก้ไข" ใน modal
+            const submitBtn = modal.querySelector('.modal-btn.submit');
+            submitBtn.addEventListener('click', function () {
+                const message = textarea.value.trim();
+                if (!message) {
+                    alert('กรุณากรอกรายละเอียดที่ต้องการให้แก้ไข');
+                    return;
+                }
+                // TODO: ส่ง message ไป backend ตามจริง
+                console.log('ส่งคำขอแก้ไขผลตรวจ:', message);
+
+                modal.classList.remove('show');
+                // alert('ส่งคำขอแก้ไขเรียบร้อยแล้ว');
+            });
+        });
+    </script>
+
+    <script src="js/sidebarPharmacy.js"></script>
+</body>
+
+</html>

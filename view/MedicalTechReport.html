@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medicaltech Report</title>
+
+    <link rel="stylesheet" href="css/medicaltechReport.css" />
+  </head>
+
+  <body>
+    <div class="medicaltechReportPage">
+      <!-- Sidebar -->
+      <div class="sidebarMedicaltech" id="sidebarMedicaltech"></div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header class="header">
+          <h1>รายงานผล</h1>
+          <div class="boxRight">
+            <div class="divider"></div>
+            <a href="#" class="icon-link">
+              <img src="../view/img/User.png" alt="user" class="user-img" />
+            </a>
+            <button class="newPatients">ชื่อผู้ใช้งาน</button>
+          </div>
+        </header>
+
+        <div class="reportAll">
+          <div class="content-box-one">
+            <div class="box-left">
+              <div class="column1">
+                <div class="username-group">
+                  <label for="username">ชื่อผู้ใช้</label>
+                  <input type="text" id="username" placeholder="Value" />
+                </div>
+                <div class="date-range-group">
+                  <label for="date-start">วันที่</label>
+                  <select id="date-start" required>
+                    <option value="" disabled selected>ทุกวัน</option>
+                    <option value="today">วันนี้</option>
+                  </select>
+                  <label for="date-end" class="label-mid">ถึง</label>
+                  <select id="date-end" required>
+                    <option value="" disabled selected>-----</option>
+                    <option value="tomorrow">พรุ่งนี้</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="column2">
+                <div class="position-group">
+                  <label for="position">ตำแหน่ง</label>
+                  <select id="position" required>
+                    <option value="" disabled selected>ทั้งหมด</option>
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                  </select>
+                </div>
+                <div class="time-range-group">
+                  <label for="time-start">ช่วงเวลา</label>
+                  <select id="time-start" required>
+                    <option value="" disabled selected>ทุกวัน</option>
+                    <option value="now">ตอนนี้</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="column3">
+                <div class="level-group">
+                  <label for="level">ระดับ</label>
+                  <select id="level" required>
+                    <option value="" disabled selected>ทั้งหมด</option>
+                  </select>
+                </div>
+                <div class="to-time">
+                  <label for="time-end" class="label-mid">ถึง</label>
+                  <select id="time-end" required>
+                    <option value="" disabled selected>ทุกวัน</option>
+                    <option value="later">ทีหลัง</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="column4">
+                <div class="action-group">
+                  <label for="action">การทำงานของผู้ใช้</label>
+                  <select id="action" required>
+                    <option value="" disabled selected>ทั้งหมด</option>
+                  </select>
+                </div>
+                <div class="page-name-group">
+                  <label for="page-name">ชื่อหน้า</label>
+                  <select id="page-name" required>
+                    <option value="" disabled selected>ทั้งหมด</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-right2">
+              <button class="search-button">ค้นหา</button>
+              <button class="clear-button">ล้างคำค้นหาทั้งหมด</button>
+            </div>
+          </div>
+
+          <section class="report-section">
+            <div class="report-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>NO.</th>
+                    <th>ชื่อ-นามสกุล</th>
+                    <th>เลขประจำตัว(HN)</th>
+                    <th>สถานะการตรวจ</th>
+                    <th>Genotype</th>
+                    <th>จัดการผลตรวจ</th>
+                    <th>ดูผลตรวจ</th>
+                  </tr>
+                </thead>
+                <tbody id="report-body">
+                  <!-- เนื้อหาของตาราง (table body) -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/medicaltechReport.js"></script>
+    <script src="js/sidebarMedicaltech.js"></script>
+  </body>
+</html>

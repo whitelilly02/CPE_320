@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicaltech Dashboard Add</title>
+    <link rel="stylesheet" href="css/medicaltechDashboardAdd.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+
+<body>
+
+    <div class="medicaltechDashboardAddPage">
+
+        <div class="div1">
+            <div class="sidebarMedicaltech" id="sidebarMedicaltech"></div>
+        </div>
+
+        <div class="div2">
+
+            <div class="top">
+                <div class="topLeft">
+                    <h1>กรอกข้อมูลผู้ป่วยใหม่</h1>
+                </div>
+                <div class="topRight">
+                    <h1>TEAM</h1>
+                </div>
+            </div>
+
+            <div class="center">
+
+                <div class="patient-form-container">
+                    <h2>ข้อมูลผู้ป่วย</h2>
+                    <form action="#" method="post">
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="name">ชื่อ-นามสกุล (Name) :</label>
+                                <div class="name-inputs">
+                                    <input type="text" id="first-name" name="first-name" placeholder="ชื่อ">
+                                    <input type="text" id="last-name" name="last-name" placeholder="นามสกุล">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="age">อายุ (Age) :</label>
+                                <input type="text" id="age" name="age">
+                            </div>
+
+                            <div class="form-group">
+                                <label>เพศ (Gender) :</label>
+                                <div class="gender-options">
+                                    <div>
+                                        <input type="radio" id="male" name="gender" value="male">
+                                        <label for="male">ชาย (male)</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="female" name="gender" value="female">
+                                        <label for="female">หญิง (Women)</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="id-number">เลขประจำตัวประชาชน (ID Number) :</label>
+                                <input type="text" id="id-number" name="id-number"
+                                    placeholder="เลขประจำตัวประชาชน 13 หลัก">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ethnicity">เชื้อชาติ (Ethnicity) :</label>
+                                <select id="ethnicity" name="ethnicity">
+                                    <option value="">-- กรุณาเลือก --</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">เบอร์ติดต่อ (Phone/Fax) :</label>
+                                <input type="text" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="physician">แพทย์ (Physician) :</label>
+                                <input type="text" id="physician" name="physician">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="hospital">หน่วยงานที่ส่งตรวจ (Hospital) :</label>
+                                <input type="text" id="hospital" name="hospital">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="hn">เลขประจำตัว (HN) :</label>
+                                <input type="text" id="hn" name="hn" placeholder="HN000011 (กรอก auto)">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="request-date">วันที่ตรวจ (Requestes Date) :</label>
+                                <div class="date-wrapper">
+                                    <input type="date" id="request-date" name="request-date" placeholder="วว/ดด/ปปปป">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="report-date">วันที่รายงาน (Reported Date) :</label>
+                                <div class="date-wrapper">
+                                    <input type="date" id="report-date" name="report-date" placeholder="วว/ดด/ปปปป">
+                                </div>
+                            </div>
+
+                            <div class="split-group">
+                                <div class="form-group">
+                                    <label for="weight">น้ำหนัก :</label>
+                                    <input type="text" id="weight" name="weight" placeholder="กรอกน้ำหนัก (กิโลกรัม)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="height">ส่วนสูง :</label>
+                                    <input type="text" id="height" name="height" placeholder="กรอกส่วนสูง (เซนติเมตร)">
+                                </div>
+                            </div>
+
+                            <div class="form-group remarks">
+                                <label for="remarks">หมายเหตุ :</label>
+                                <textarea id="remarks" name="remarks"
+                                    placeholder="ระบุหมายเหตุเพิ่มเติมเกี่ยวกับประวัติการรักษา"></textarea>
+                            </div>
+
+                            <div class="form-buttons">
+                                <button type="button" class="btn-secondary">บันทึกข้อมูล</button>
+                                <button type="submit" class="btn-primary">บันทึกข้อมูลและเพิ่มในสิ่งส่งตรวจ</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/sidebarMedicaltech.js"></script>
+
+</body>
+
+</html>

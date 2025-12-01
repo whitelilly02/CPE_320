@@ -1,0 +1,484 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --greenOriginalBottom: linear-gradient(to bottom, #305038, #278133);
+    --greenOriginalRight: linear-gradient(to right, #305038, #278133);
+    --fontColorBlack: rgb(0, 0, 0);
+    --fontColorWhite: rgb(255, 255, 255);
+    --backgroundColor: #E6FFED;
+    --backgroundColorWhite: #ffff;
+}
+
+/* headerSetting */
+
+.userPatientBPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--backgroundColor);
+    margin-left: 350px;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 40px;
+    background-color: var(--backgroundColorWhite);
+}
+
+.header h1 {
+    color: var(--fontColorBlack);
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    border-left: 1px solid #000;
+}
+
+.newPatients {
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    background: #60DB83;
+    color: var(--fontColorBlack);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+/* ============ Main content เนื้อหา============ */
+
+.patient2-content {
+	flex: 1 1 auto;
+	padding: 40px 56px;
+	background: linear-gradient(180deg, #f3fff1 0%, #e1f3db 55%, #d2eccb 100%);
+}
+
+/* HEADER ด้านบนของหน้า (แบบเดียวกับ patient page) */
+.patient2-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #ffffff;
+	padding: 32px 56px 28px;
+	margin: -40px -56px 32px;
+	border-bottom: 1px solid rgba(20, 56, 31, 0.14);
+}
+
+.patient2-header h1 {
+	font-size: 48px;
+	font-weight: 700;
+	color: #111111;
+	margin: 0;
+}
+
+.patient2-header-actions {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}
+
+.header-separator {
+	width: 2px;
+	height: 44px;
+	background-color: #000000;
+	border-radius: 1px;
+}
+
+.patient2-header-profile {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.patient2-header-avatar {
+	width: 42px;
+	height: 38px;
+	object-fit: contain;
+}
+
+.patient2-header-chip {
+	border: none;
+	border-radius: 24px;
+	padding: 10px 28px;
+	background: #60db83;
+	color: #0d2816;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+/* ================== layout เนื้อหาในหน้า ================== */
+
+.report-container {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	gap: 20px;
+	width: 100%;
+	padding: 20px;
+}
+
+.genotype-section {
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	border: 2px solid #000000;
+}
+
+.input-group {
+	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.input-group label {
+	min-width: 150px;
+	color: #333;
+	font-size: 14px;
+}
+
+input[type="text"] {
+	width: 100px;
+	padding: 6px 10px;
+	border: 2px solid #000000;
+	border-radius: 4px;
+	background-color: #ffffff;
+	font-size: 14px;
+}
+
+textarea {
+	width: 100%;
+	padding: 10px;
+	border: 2px solid #000000;
+	border-radius: 4px;
+	background-color: #ffffff;
+	min-height: 80px;
+	resize: none;
+}
+
+/* กล่องข้อมูลผู้ป่วยด้านขวาเดิม */
+.patient-info {
+	background: white;
+	padding: 0;
+	border-radius: 8px;
+	border: 2px solid #000000;
+	height: fit-content;
+}
+
+.patient-info h2 {
+	background-color: white;
+	color: #333;
+	margin: 0;
+	padding: 12px 15px;
+	font-size: 16px;
+	border-bottom: 2px solid #fffdfd;
+	text-align: center;
+}
+
+.info-grid {
+	padding: 15px;
+	display: grid;
+	gap: 12px;
+}
+
+.info-item {
+	display: grid;
+	grid-template-columns: 150px 1fr;
+	gap: 10px;
+	align-items: center;
+	border: none;
+}
+
+.info-item label {
+	color: #666;
+	font-size: 14px;
+}
+
+.info-item span {
+	color: #333;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.predicted-section,
+.recommendation-section {
+	margin-top: 20px;
+}
+
+.predicted-section label,
+.recommendation-section label {
+	display: block;
+	margin-bottom: 5px;
+	color: #666;
+}
+
+.predicted-section textarea {
+	width: 773px;
+	height: 89px;
+	border: 2px solid #000000;
+}
+
+/* ================== ตาราง / พาเนลแบบ patient2-panels ================== */
+
+.patient2-panels {
+	display: grid;
+	grid-template-columns: minmax(0, 2.25fr) minmax(0, 1fr);
+	gap: 28px;
+}
+
+.patient2-panel {
+	background: #ffffff;
+	border: 1.8px solid rgba(24, 70, 36, 0.7);
+	border-radius: 26px;
+	padding: 24px 28px 30px;
+	box-shadow: 0 14px 28px rgba(26, 78, 39, 0.12);
+}
+
+.patient2-panel-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid rgba(18, 52, 30, 0.45);
+	background: #ffffff;
+}
+
+.patient2-panel-head h2 {
+	font-size: 24px;
+	font-weight: 700;
+	color: #0f2818;
+}
+
+/* ช่อง search ภายใน panel ถ้ามี */
+.patient2-search {
+	display: flex;
+	align-items: center;
+	border: 1.5px solid #0f2818;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.patient2-search input {
+	border: none;
+	padding: 10px 18px;
+	width: 240px;
+	font-size: 14px;
+	outline: none;
+}
+
+.patient2-search button {
+	border: none;
+	background: #f2f5f0;
+	padding: 8px 12px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.patient2-search button img {
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+}
+
+/* ตาราง */
+.patient2-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+	color: #152c1c;
+}
+
+.patient2-table th,
+.patient2-table td {
+	padding: 12px 10px;
+	text-align: left;
+	border-bottom: 1px solid rgba(16, 44, 25, 0.12);
+	white-space: nowrap;
+}
+
+.patient2-table th {
+	font-size: 15px;
+	font-weight: 700;
+	color: #111111;
+}
+
+/* คอลัมน์ status / การดำเนินการ */
+.patient2-table th:nth-child(4),
+.patient2-table td:nth-child(4),
+.patient2-table th:nth-child(6),
+.patient2-table td:nth-child(6) {
+	width: 140px;
+	text-align: center;
+}
+
+/* pill สถานะ */
+.status-pill {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 130px;
+	padding: 6px 16px;
+	border-radius: 999px;
+	font-weight: 700;
+	font-size: 13px;
+	color: #1d2218;
+}
+
+.status-pill--orange {
+	background: linear-gradient(180deg, #ffda8a 0%, #f6b64d 100%);
+	color: #5b3a00;
+}
+
+.status-pill--green {
+	background: linear-gradient(180deg, #b8ffb4 0%, #60db83 100%);
+	color: #0c3e1f;
+}
+
+.status-pill--red {
+	background: linear-gradient(180deg, #ffabab 0%, #ff7373 100%);
+	color: #5b0d0d;
+}
+
+.status-pill--gray {
+	background: linear-gradient(180deg, #f1f1f1 0%, #c7c7c7 100%);
+	color: #2f2f2f;
+}
+
+/* ปุ่มการดำเนินการ */
+.action-button {
+	border: 1.6px solid #111111;
+	border-radius: 16px;
+	background: #ffffff;
+	padding: 6px 16px;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s ease;
+	min-width: 118px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.action-button:hover {
+	background: #ebf6ea;
+}
+
+/* panel ข้อมูลผู้ป่วยแบบใหม่ (ถ้าใช้คลาสนี้) */
+.patient2-panel--info {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.patient2-info-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 14px;
+}
+
+.patient2-info-list li {
+	display: flex;
+	justify-content: space-between;
+	font-size: 16px;
+	color: #0f2818;
+}
+
+.patient2-info-list .label {
+	font-weight: 600;
+	color: #0b2415;
+}
+
+.patient2-info-list .value {
+	font-weight: 600;
+	color: #1f54c8;
+}
+
+.patient2-info-action {
+	align-self: center;
+	border: none;
+	border-radius: 22px;
+	padding: 10px 26px;
+	background: linear-gradient(180deg, #2ba746 0%, #208337 100%);
+	color: #ffffff;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.patient2-info-action:hover {
+	opacity: 0.9;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 1080px) {
+	.patient2-app {
+		flex-direction: column;
+	}
+
+	.sidebar {
+		width: 100%;
+		flex-direction: row;
+		align-items: center;
+		gap: 24px;
+		height: auto;
+	}
+
+	.nav {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.logout {
+		position: static;
+		margin-top: 16px;
+	}
+
+	.patient2-content {
+		padding: 24px;
+	}
+
+	.patient2-header {
+		margin: -24px -24px 24px;
+		padding: 24px 24px 20px;
+	}
+
+	.patient2-panels {
+		grid-template-columns: 1fr;
+	}
+
+	.patient2-table th:nth-child(4),
+	.patient2-table td:nth-child(4),
+	.patient2-table th:nth-child(6),
+	.patient2-table td:nth-child(6) {
+		width: auto;
+	}
+
+	.status-pill,
+	.action-button {
+		min-width: 110px;
+	}
+}

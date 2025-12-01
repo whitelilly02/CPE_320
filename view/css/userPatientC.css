@@ -1,0 +1,600 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --greenOriginalBottom: linear-gradient(to bottom, #305038, #278133);
+    --greenOriginalRight: linear-gradient(to right, #305038, #278133);
+    --fontColorBlack: rgb(0, 0, 0);
+    --fontColorWhite: rgb(255, 255, 255);
+    --backgroundColor: #E6FFED;
+    --backgroundColorWhite: #ffff;
+}
+
+/* headerSetting */
+
+.userPatientCPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--backgroundColor);
+    margin-left: 350px;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 40px;
+    background-color: var(--backgroundColorWhite);
+}
+
+.header h1 {
+    color: var(--fontColorBlack);
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    border-left: 1px solid #000;
+}
+
+.newPatients {
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    background: #60DB83;
+    color: var(--fontColorBlack);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+/* ============ Main content เนื้อหา============ */
+
+.patient-content {
+	flex: 1 1 auto;
+	padding: 40px 56px;
+	background: linear-gradient(180deg, #f3fff1 0%, #e1f3db 55%, #d2eccb 100%);
+}
+
+.patient-content > header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #ffffff;
+	padding: 32px 56px 28px;
+	margin: -40px -56px 32px;
+	border-bottom: 1px solid rgba(20, 56, 31, 0.14);
+	position: relative;
+}
+
+.patient-content > header h1,
+.patient-content > header h2 {
+	margin: 0;
+	font-size: 48px;
+	color: #111;
+	font-weight: 700;
+}
+
+/* โปรไฟล์ขวาบน */
+.user-profile {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background: transparent;
+	padding: 6px 0;
+}
+
+.user-profile .sep {
+	width: 1px;
+	height: 28px;
+	background: #000000;
+	border-radius: 1px;
+	margin-right: 8px;
+}
+
+.user-profile .user-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	border: 1px solid #000000;
+	background: transparent;
+}
+
+.user-profile .user-icon img {
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+}
+
+.user-profile .user-chip {
+	background: #60DB83;
+	color: #000000;
+	padding: 8px 14px;
+	border-radius: 20px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+/* ================== layout เดิมของหน้านี้ ================== */
+
+.report-container {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	gap: 20px;
+	width: 100%;
+	padding: 20px;
+}
+
+.genotype-section {
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	border: 2px solid #000000;
+}
+
+.input-group {
+	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.input-group label {
+	min-width: 150px;
+	color: #333;
+	font-size: 14px;
+}
+
+input[type="text"] {
+	width: 100px;
+	padding: 6px 10px;
+	border: 2px solid #000000;
+	border-radius: 4px;
+	background-color: #ffffff;
+	font-size: 14px;
+}
+
+textarea {
+	width: 100%;
+	padding: 10px;
+	border: 2px solid #000000;
+	border-radius: 4px;
+	background-color: #ffffff;
+	min-height: 80px;
+	resize: none;
+}
+
+.patient-info {
+	background: white;
+	padding: 0;
+	border-radius: 8px;
+	border: 2px solid #000000;
+	height: fit-content;
+}
+
+.patient-info h2 {
+	background-color: white;
+	color: #333;
+	margin: 0;
+	padding: 12px 15px;
+	font-size: 16px;
+	border-bottom: 2px solid #fffdfd;
+	text-align: center;
+}
+
+.info-grid {
+	padding: 15px;
+	display: grid;
+	gap: 12px;
+}
+
+.info-item {
+	display: grid;
+	grid-template-columns: 150px 1fr;
+	gap: 10px;
+	align-items: center;
+	border: none;
+}
+
+.info-item label {
+	color: #666;
+	font-size: 14px;
+}
+
+.info-item span {
+	color: #333;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.predicted-section,
+.recommendation-section {
+	margin-top: 20px;
+}
+
+.predicted-section label,
+.recommendation-section label {
+	display: block;
+	margin-bottom: 5px;
+	color: #666;
+}
+
+.predicted-section textarea {
+	width: 773px;
+	height: 89px;
+	border: 2px solid #000000;
+}
+
+/* ================== ส่วน layout รายการตรวจ & ตาราง ================== */
+
+.patient-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.patient-header h1 {
+	font-size: 48px;
+	font-weight: 700;
+	color: #111111;
+	margin: 0;
+}
+
+.patient-header-actions {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}
+
+.header-separator {
+	width: 2px;
+	height: 44px;
+	background-color: #000000;
+}
+
+.patient-header-profile {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.patient-header-avatar {
+	width: 42px;
+	height: 38px;
+	object-fit: contain;
+}
+
+.patient-header-chip {
+	border: none;
+	border-radius: 24px;
+	padding: 10px 28px;
+	background: #60db83;
+	color: #0d2816;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+/* layout ซ้าย-ขวา */
+.patient-layout {
+	display: grid;
+	grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+	gap: 28px;
+	align-items: stretch;
+}
+
+.patient-card {
+	background: #ffffff;
+	border: 1.8px solid rgba(24, 70, 36, 0.7);
+	border-radius: 26px;
+	padding: 24px 28px 30px;
+	box-shadow: 0 14px 28px rgba(26, 78, 39, 0.12);
+}
+
+.patient-side {
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+
+.patient-card-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 18px;
+	padding: 0;
+}
+
+.patient-card-head h2 {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 700;
+	color: #12381f;
+}
+
+/* การ์ด “รายการตรวจ” */
+.patient-card--orders {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-self: stretch;
+	gap: 16px;
+	background: linear-gradient(180deg, #ffffff 0%, #f3f3f3 100%);
+	border: 1.6px solid rgba(140, 140, 140, 0.45);
+	border-radius: 30px;
+	padding: 28px 32px 24px;
+	box-shadow: inset 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.orders-table-wrapper {
+	width: 100%;
+	max-width: 100%;
+	min-height: 640px;
+	padding: 0;
+	background: #ffffff;
+	border-radius: 24px;
+	border: 1.2px solid rgba(170, 170, 170, 0.46);
+	box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.05);
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	overflow: hidden;
+}
+
+.patient-card--orders .patient-card-head {
+	justify-content: center;
+	margin-bottom: 18px;
+	padding-bottom: 12px;
+	border-bottom: 1.4px solid rgba(110, 110, 110, 0.32);
+	width: 100%;
+}
+
+.patient-card--orders .patient-card-head h2 {
+	margin: 0;
+	font-size: 22px;
+	font-weight: 800;
+	letter-spacing: 0.4px;
+}
+
+/* ตาราง */
+.patient-orders {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: separate;
+	border-spacing: 0;
+	font-size: 13px;
+	color: #1a1a1a;
+	background: #ffffff;
+}
+
+.patient-orders thead th {
+	padding: 12px 16px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #0f2818;
+	background: linear-gradient(180deg, #efefef 0%, #d8dbd8 100%);
+	text-align: left;
+	border-bottom: 1px solid rgba(16, 44, 25, 0.18);
+	line-height: 1.35;
+}
+
+.patient-orders tbody td {
+	padding: 10px 16px;
+	text-align: left;
+	border-bottom: 1px solid rgba(16, 44, 25, 0.12);
+	background: #ffffff;
+	font-size: 13px;
+	vertical-align: middle;
+}
+
+.patient-orders tbody td:last-child {
+	text-align: center;
+}
+
+/* กำหนดความกว้างแต่ละคอลัมน์ */
+.patient-orders th:nth-child(1),
+.patient-orders td:nth-child(1) { width: 12%; }
+
+.patient-orders th:nth-child(2),
+.patient-orders td:nth-child(2) { width: 28%; }
+
+.patient-orders th:nth-child(3),
+.patient-orders td:nth-child(3) { width: 16%; }
+
+.patient-orders th:nth-child(4),
+.patient-orders td:nth-child(4) { width: 14%; }
+
+.patient-orders th:nth-child(5),
+.patient-orders td:nth-child(5) { width: 15%; }
+
+.patient-orders th:nth-child(6),
+.patient-orders td:nth-child(6) { width: 18%; }
+
+.patient-orders tbody td:nth-child(2),
+.patient-orders tbody td:nth-child(3),
+.patient-orders tbody td:nth-child(4) {
+	text-align: left;
+}
+
+/* status & ปุ่ม */
+.status-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 92px;
+	padding: 4px 10px;
+	border-radius: 12px;
+	font-weight: 700;
+	font-size: 12px;
+	border: 1.4px solid #c67a0b;
+}
+
+.status-badge--orange {
+	background: linear-gradient(180deg, #ffe9b8 0%, #f3ab41 100%);
+	color: #5b3a00;
+}
+
+.outline-button {
+	border: 1.6px solid #565656;
+	border-radius: 12px;
+	background: linear-gradient(180deg, #fefefe 0%, #d9d9d9 100%);
+	padding: 5px 12px;
+	font-size: 12px;
+	font-weight: 700;
+	min-width: 94px;
+	color: #121212;
+	cursor: pointer;
+	transition: background 0.2s ease;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+	
+}
+
+.outline-button:hover {
+	background: linear-gradient(180deg, #ffffff 0%, #cecece 100%);
+}
+
+/* side info */
+.patient-info-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 14px;
+	font-size: 16px;
+	color: #0f2818;
+}
+
+.patient-info-list li {
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.patient-info-list .label {
+	font-weight: 600;
+	color: #0b2415;
+}
+
+.patient-info-list .value {
+	font-weight: 600;
+	color: #1f54c8;
+}
+
+.patient-order-summary {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	font-size: 14px;
+	border: 1.4px solid rgba(16, 44, 25, 0.5);
+	border-radius: 18px;
+	overflow: hidden;
+}
+
+.patient-order-summary thead th {
+	padding: 12px 14px;
+	font-size: 15px;
+	font-weight: 700;
+	color: #0f2818;
+	background: linear-gradient(180deg, #efefef 0%, #d8dbd8 100%);
+	text-align: left;
+}
+
+.patient-order-summary tbody td {
+	padding: 12px 14px;
+	border-bottom: 1px solid rgba(16, 44, 25, 0.12);
+	background: #ffffff;
+}
+
+.patient-order-summary tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.patient-order-summary td:nth-child(3) {
+	width: 60px;
+	text-align: center;
+}
+
+.download-icon {
+	width: 24px;
+	height: 24px;
+	object-fit: contain;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 1080px) {
+	.patient-app {
+		flex-direction: column;
+	}
+
+	.sidebar {
+		width: 100%;
+		flex-direction: row;
+		align-items: center;
+		gap: 24px;
+		height: auto;
+	}
+
+	.nav {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.logout {
+		position: static;
+		margin-top: 16px;
+		border-top: none;
+	}
+
+	.patient-content {
+		padding: 24px;
+	}
+
+	.patient-content > header {
+		margin: -24px -24px 24px;
+		padding: 24px 24px 20px;
+	}
+
+	.patient-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.patient-card--orders {
+		padding: 22px 24px 26px;
+	}
+
+	.patient-orders {
+		font-size: 12px;
+	}
+
+	.status-badge,
+	.outline-button {
+		min-width: 96px;
+		padding: 4px 10px;
+		font-size: 12px;
+	}
+
+	.patient-orders thead th,
+	.patient-orders tbody td {
+		text-align: left;
+		padding: 6px 8px;
+	}
+}

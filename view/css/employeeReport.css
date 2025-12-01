@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --greenOriginalBottom: linear-gradient(to bottom, #305038, #278133);
+    --greenOriginalRight: linear-gradient(to right, #305038, #278133);
+    --fontColorBlack: rgb(0, 0, 0);
+    --fontColorWhite: rgb(255, 255, 255);
+    --backgroundColor: #E6FFED;
+}
+
+/* headerSetting */
+
+.employeeReportPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--backgroundColor);
+    margin-left: 350px;
+    min-height: 100vh;
+}
+
+.header h1 {
+    color: var(--fontColorBlack);
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    border-left: 1px solid #000;
+}
+
+.newPatients {
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    background: #60DB83;
+    color: var(--fontColorBlack);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+.main-content {
+    flex: 1 1 auto;
+    height: 100%;
+    background: linear-gradient(180deg, #f3fff1 0%, #e1f3db 55%, #d2eccb 100%);
+    padding: 40px 56px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    padding: 32px 56px 28px;
+    margin: -40px -56px 32px;
+    border-bottom: 1px solid rgba(20, 56, 31, 0.14);
+}
+
+/* body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E6FFED;
+} */
+
+/* html,
+body {
+    overflow-x: hidden;
+} */
+
+/* .page-patient {
+    display: flex;
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+} */
+
+/* ============ Main content ============ */
+
+/* .main-content {
+    flex: 1 1 auto;
+    height: 100%;
+    background: linear-gradient(180deg, #f3fff1 0%, #e1f3db 55%, #d2eccb 100%);
+    padding: 40px 56px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    padding: 32px 56px 28px;
+    margin: -40px -56px 32px;
+    border-bottom: 1px solid rgba(20, 56, 31, 0.14);
+} */
+
+/* .header p {
+    font-weight: bold;
+    font-size: 48px;
+} */
+
+/* .box-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+} */
+
+/* .divider {
+    width: 1px;
+    height: 50px;
+    background: #000;
+} */
+
+.user-img {
+    width: 40px;
+    height: 40px;
+}
+
+/* .New-Patients {
+    min-width: 180px;
+    height: 45px;
+    background: #60DB83;
+    border-radius: 20px;
+    border: none;
+    padding: 0 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+/* ======================================================
+   =============== Filter Box Layout =====================
+   ====================================================== */
+
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-box-one {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 0;
+}
+
+/* ============ กล่องเขียว ============ */
+.box-left {
+    background: linear-gradient(to right, #3a4a3f, #1a9e3e);
+    border-radius: 10px;
+    padding: 16px 24px;
+    color: white;
+
+    width: 1130px;
+
+    display: grid;
+
+    /* 4 คอลัมน์เท่ากัน พอดีกล่อง */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 16px;
+
+    /* จัด layout ตามที่ต้องการ */
+    grid-template-areas:
+        "name position level status"
+        "date time page .";
+}
+
+/* ฟิลด์แต่ละอัน */
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* ช่อง input/select */
+.filter-item input {
+    width: 180px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    padding: 0 12px;
+}
+
+.filter-item select {
+    width: 125px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    padding: 0 12px;
+}
+
+/* ===== map filter แต่ละอันลง grid-area ===== */
+/* 1 = ชื่อผู้ใช้ */
+.box-left .filter-item:nth-child(1) {
+    grid-area: name;
+}
+
+/* 2 = ตำแหน่ง */
+.box-left .filter-item:nth-child(2) {
+    margin-left: -50px;
+}
+
+/* เลื่อน "ระดับ" เข้ามาใกล้คำว่า "ถึง" ของแถวล่าง */
+.box-left .filter-item:nth-child(3) {
+    margin-left: -160px;
+    /* ปรับได้ตามต้องการ เช่น -8px / -12px */
+}
+
+/* เลื่อน "การทำงานของผู้ใช้" ให้ตรงกับ select ตัวสุดท้ายแถวล่าง */
+.box-left .filter-item:nth-child(4) {
+    margin-left: -130px;
+    /* ปรับได้ตามที่ต้องการ */
+}
+
+
+/* 5 = วันที่ (จาก–ถึง) */
+.box-left .filter-item:nth-child(5) {
+    grid-area: date;
+}
+
+/* 6 = ช่วงเวลา (จาก–ถึง) */
+.box-left .filter-item:nth-child(6) {
+    grid-area: time;
+    gap: 10px;
+    /* กัน select สองอันเบียดกัน */
+}
+
+/* 7 = ชื่อหน้า */
+.box-left .filter-item:nth-child(7) {
+    margin-right: -200px;
+}
+
+/* ทำให้ select ในฟิลด์วันที่ / ช่วงเวลา เล็กลงหน่อยจะได้ไม่ล้นคอลัมน์ */
+.box-left .filter-item:nth-child(5) select,
+.box-left .filter-item:nth-child(6) select {
+    width: 110px;
+}
+
+/* label “ถึง” */
+.filter-item .small {
+    font-size: 13px;
+}
+
+/* ปุ่มด้านขวา */
+.box-right2 {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.search-button,
+.clear-button {
+    width: 215px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid #8F8C8C;
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ======================================================
+   =================== Tables ============================
+   ====================================================== */
+
+.report-section {
+    width: 100%;
+    margin-top: 24px;
+    padding: 0 32px 32px;
+    border-radius: 12px;
+    border: 1px solid #000;
+    background-color: #FFFFFF;
+}
+
+.report-table table {
+    margin-top: 15px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.report-table thead th {
+    font-weight: bold;
+    padding: 10px 12px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.report-table tbody td {
+    padding: 10px 12px;
+    border-bottom: 2px solid #e5e7eb;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 8px;
+
+    /* ขอบส้มเข้ม */
+    border: 1px solid #FF9317;
+
+    /* พื้นหลังส้มอ่อน */
+    background-color: #FFF4E5;
+
+    /* สีตัวอักษรส้มเข้ม */
+    color: #FF9317;
+
+    font-size: 11px;
+    font-weight: 700;
+    width: 120px;
+    text-align: center;
+}
+
+
+.select-btn {
+    padding: 4px 12px;
+    background: #e9ecef;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+}

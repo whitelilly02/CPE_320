@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.forgetPasswordPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.forget-password-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    height: 50%;
+    border-radius: 15px;
+    padding: 40px;
+    background-color: white;
+    color: black;
+    border: 1.5px solid black;
+}
+
+.forget-password-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.forget-password-header h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: green;
+    text-align: center;
+}
+
+.forget-password-header p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.box-forget-email {
+    width: 75%;
+}
+
+.forget-email {
+    display: flex;
+    flex-direction: column;
+}
+
+.forget-email input {
+    padding: 15px 35px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #e6ffed;
+    margin: 15px 0 15px 0;
+    font-size: 16px;
+    border-style: solid;
+    border-color: black;
+}
+
+.continue-button {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.continue-button button {
+    font-size: 20px;
+    font-weight: bold;
+    width: 30%;
+    height: 60px;
+    background-color: #60DB83;
+    border-radius: 100px;
+    border: 1.5px solid;
+    border-color: black;
+    cursor: pointer;
+}

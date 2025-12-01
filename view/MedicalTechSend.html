@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedicalTechSend</title>
+    <link rel="stylesheet" href="css/medicaltechSend.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="medicaltechSendPage">
+        <!-- Sidebar -->
+        <div class="sidebarMedicaltech" id="sidebarMedicaltech"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>รับสิ่งส่งตรวจ</h1>
+                <div class="boxRight">
+                    <div class="divider"></div>
+                    <a href="#" class="icon-link">
+                        <img src="../view/img/User.png" alt="user" class="user-img">
+                    </a>
+                    <button class="newPatients">
+                        ชื่อผู้ใช้งาน
+                    </button>
+                </div>
+            </header>
+
+            <div class="sendAll">
+                <section class="send-box">
+                    <!-- แถวบน: ค้นหาชื่อ/รหัส และปุ่ม -->
+                    <div class="send-toolbar">
+                        <div class="paper-title">รายการใบสั่งตรวจ</div>
+                        <div class="search-wrap">
+                            <label for="searchInput" class="search-label">ค้นหารายชื่อ</label>
+                            <input type="text" id="searchInput" class="search-input" placeholder="">
+                            <button class="search-button">ค้นหา</button>
+                        </div>
+                    </div>
+
+                    <div class="send-grid">
+                        <div class="table-scroll">
+                            <table class="order-table">
+                                <thead>
+                                    <tr>
+                                        <th>หมายเลขใบสั่ง</th>
+                                        <th>เลขประจำตัว(HN)</th>
+                                        <th>รหัสการตรวจ</th>
+                                        <th>แพทย์ผู้สั่งตรวจ</th>
+                                        <th>วันที่ตรวจ</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="orderTbody">
+                                    <tr class="active-row">
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- ขวา: ฟอร์มรายละเอียด -->
+                        <div class="panel-detail">
+                            <div class="form-grid">
+                                <div class="form-row">
+                                    <label>หมายเลขสิ่งส่งตรวจ</label>
+                                    <input class="input" id="orderId" type="text">
+                                </div>
+                                <div class="form-row">
+                                    <label>ชื่อสิ่งส่งตรวจ</label>
+                                    <input class="input" id="orderName" type="text">
+                                </div>
+                                <div class="form-rowtwo">
+                                    <div>
+                                        <label>ชนิดสิ่งส่งตรวจ</label>
+                                        <input class="input" id="specimenType" type="text" placeholder="">
+                                    </div>
+                                    <div>
+                                        <label>ปริมาณขั้นต่ำ</label>
+                                        <input class="input" id="minVolume" type="text" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="form-rowtwo">
+                                    <div>
+                                        <label>ภาชนะ</label>
+                                        <input class="input" id="container" type="text" placeholder="">
+                                    </div>
+                                    <div>
+                                        <label>อุณหภูมิขนส่ง</label>
+                                        <input class="input" id="transportTemp" type="text" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label>เหตุผลที่สั่งตรวจ</label>
+                                    <input class="input" id="reason" type="text" placeholder="ระบุเหตุผลการสั่งตรวจ">
+                                </div>
+                                <div class="form-row">
+                                    <label>โปรดระบุชนิดของยาที่จะใช้ในการรักษา : </label>
+                                    <input class="input" id="regimen" type="text"
+                                        placeholder="ระบุยาที่จะใช้ในการรักษา">
+                                </div>
+                                <div class="form-row">
+                                    <label>ยาที่ผู้ป่วยได้รับในปัจจุบัน :</label>
+                                    <input class="input" id="currentMeds" type="text"
+                                        placeholder="ระบุยาที่ผู้ป่วยได้รับ">
+                                </div>
+                                <div class="detail-toolbar">
+                                    <button class="btn-ghost" id="btnViewOrder">ดูใบสั่งตรวจ</button>
+                                </div>
+
+                                <!-- ปุ่มด้านล่าง -->
+                                <div class="form-actions">
+                                    <button class="btn-success" id="btnAccept">ยืนยันสิ่งส่งตรวจ</button>
+                                    <button class="btn-danger" id="btnReject">ปฎิเสธสิ่งส่งตรวจ</button>
+                                    <button class="btn-neutral" id="btnPrint">พิมพ์บาร์โค้ด</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/medicaltechSend.js"></script>
+    <script src="js/sidebarMedicaltech.js"></script>
+
+</body>
+
+</html>

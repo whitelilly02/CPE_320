@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>หน้ารวมผู้ป่วย - ข้อมูลเจาะลึก</title>
+	<link rel="stylesheet" href="css/userPatientB.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="userPatientBPage">
+		<div class="sidebarUser" id="sidebarUser"></div>
+
+		<main class="main-content patient2-content">
+			<header class="patient2-header">
+				<h1>หน้ารวมผู้ป่วย</h1>
+				<div class="patient2-header-actions">
+					<div class="header-separator"></div>
+					<div class="patient2-header-profile">
+						<img src="img/Icon (1).png" alt="ผู้ใช้งาน" class="patient2-header-avatar">
+						<button type="button" class="patient2-header-chip">ชื่อผู้ใช้งาน</button>
+					</div>
+				</div>
+			</header>
+
+			<section class="patient2-panels">
+				<div class="patient2-panel patient2-panel--list">
+					<header class="patient2-panel-head">
+						<h2>รายชื่อผู้ป่วย</h2>
+						<div class="patient2-search">
+							<input type="search" placeholder="ค้นหาข้อมูลผู้ป่วย..." aria-label="ค้นหาข้อมูลผู้ป่วย">
+							<button type="button" aria-label="ค้นหา">
+								<img src="img/Search.png" alt="ค้นหา">
+							</button>
+						</div>
+					</header>
+					<table class="patient2-table">
+						<thead>
+							<tr>
+								<th>NO.</th>
+								<th>ชื่อ-นามสกุล</th>
+								<th>เลขประจำตัว (HN)</th>
+								<th>สถานะการตรวจ</th>
+								<th>แพทย์ประจำตัว</th>
+								<th>การดำเนินการ</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>นายบาส ทดสอบ</td>
+								<td>HN000011</td>
+								<td><span class="status-pill status-pill--orange">รอดำเนินการ</span></td>
+								<td>นพ.วิทย์ศาส สาคร</td>
+								<td><button type="button" class="action-button">รอยืนยันผล</button></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>นายยา ทดสอบ</td>
+								<td>HN000012</td>
+								<td><span class="status-pill status-pill--green">ยืนยันแล้ว</span></td>
+								<td>นพ.วิทย์ศาส สาคร</td>
+								<td><button type="button" class="action-button">เสร็จสิ้น</button></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>นางเรณรงค์ ทดสอบ</td>
+								<td>HN000013</td>
+								<td><span class="status-pill status-pill--red">ไม่ผ่าน</span></td>
+								<td>นพ.วิทย์ศาส สาคร</td>
+								<td><button type="button" class="action-button">รอแก้ผล</button></td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>นายทด ทดสอบ</td>
+								<td>HN000014</td>
+								<td><span class="status-pill status-pill--gray">ยังไม่ได้ส่งตรวจ</span></td>
+								<td>นพ.วิทย์ศาส สาคร</td>
+								<td><button type="button" class="action-button">รอส่งตรวจ</button></td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>นางเรณรงค์ ทดสอบ</td>
+								<td>HN000015</td>
+								<td><span class="status-pill status-pill--orange">รอดำเนินการ</span></td>
+								<td>นพ.วิทย์ศาส สาคร</td>
+								<td><button type="button" class="action-button">อยู่ระหว่างตรวจ</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="patient2-panel patient2-panel--info">
+					<header class="patient2-panel-head">
+						<h2>ข้อมูลผู้ป่วยเบื้องต้น</h2>
+					</header>
+					<ul class="patient2-info-list">
+						<li><span class="label">ชื่อ-นามสกุล (Name)</span><span class="value">นายบาส ทดสอบ</span></li>
+						<li><span class="label">เลขประจำตัว (HN)</span><span class="value">HN000011</span></li>
+						<li><span class="label">เพศ (Gender)</span><span class="value">ชาย</span></li>
+						<li><span class="label">อายุ (Age)</span><span class="value">21 ปี</span></li>
+						<li><span class="label">เชื้อชาติ (Ethnicity)</span><span class="value">ไทย</span></li>
+						<li><span class="label">เบอร์ติดต่อ (Phone/Fax)</span><span class="value">090-000-0000</span>
+						</li>
+						<li><span class="label">แพทย์ (Physician)</span><span class="value">นพ.อธิสราพงษ์ ชุ่มอ้อ</span>
+						</li>
+						<li><span class="label">น้ำหนัก</span><span class="value">79 กิโลกรัม</span></li>
+						<li><span class="label">ส่วนสูง</span><span class="value">178 เซนติเมตร</span></li>
+					</ul>
+					<button type="button" onclick="window.location.href='userPatientC.html'" class="patient2-info-action">รายละเอียดเพิ่มเติม</button>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<script src="js/sidebarUser.js"></script>
+</body>
+
+</html>

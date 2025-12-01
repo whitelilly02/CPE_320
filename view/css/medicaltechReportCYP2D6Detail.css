@@ -1,0 +1,737 @@
+/* ============ Base / Reset ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+.page-patient {
+    display: flex;
+    flex-direction: row;
+}
+
+/* ============ Sidebar ============ */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #314B38, #1DBE32);
+    border-radius: 12px;
+}
+
+.sidebar h1 {
+    color: #ffff;
+    text-align: center;
+    font-size: 40px;
+    margin: 30px 0 25px 0;
+    /* ⬅️ บน-ขวา-ล่าง-ซ้าย*/
+    flex-shrink: 0;
+}
+
+/* ============ Menu ============ */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0 20px 24px;
+    /* ⬅️ บน-ขวา-ล่าง-ซ้าย (เหลือซ้ายแค่ 24px) */
+    /* ซ้าย 24px, ขวา 0px */
+    justify-content: flex-start;
+    /* ✅ จัดให้ชิดซ้าย */
+    gap: 14px;
+    /* ระยะระหว่างไอคอนกับข้อความ */
+
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    text-align: left;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* ขนาดไอคอนให้คงที่ทุกอัน */
+.menu-item .icon {
+    display: flex;
+    justify-content: flex-start;
+    flex-shrink: 0;
+}
+
+.menu-item .icon img {
+    width: 26px;
+    height: 26px;
+    display: block;
+    object-fit: contain;
+}
+
+/* ข้อความ — กำหนดให้ line-height เท่ากัน */
+.menu-item span {
+    font-size: 26px;
+    display: block;
+    line-height: 1;
+    /* ป้องกันการเด้งขึ้นลง */
+    margin-top: 2px;
+    /* 🔹 ช่วยบาลานซ์ข้อความให้อยู่ระดับเดียวกัน */
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    /* เพิ่มพื้นหลังจาง ๆ */
+}
+
+.menu-item.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    /* สีขาวโปร่งใส 15% */
+    position: relative;
+    /* เพื่อให้ขอบสีเขียววางบนขอบขวาได้ */
+}
+
+/* สร้างขอบขวาสีเขียวอ่อน */
+.menu-item.active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 6px;
+    /* ความหนาของเส้นขอบ */
+    height: 100%;
+    background-color: #60DB83;
+    /* สีเขียวอ่อน (ปรับได้) */
+}
+
+
+/* ============ Logout button ============ */
+.logout {
+    width: 100%;
+    height: 76px;
+    display: flex;
+    /* จัดให้รูปและข้อความอยู่ในบรรทัดเดียว */
+    align-items: center;
+    /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    justify-content: center;
+    /* จัดให้อยู่ตรงกลางแนวนอน (ถ้าอยากให้ตรงกลาง) */
+    gap: 30px;
+    padding: 10px 12px;
+    background: #A0FFAB;
+    color: #1C3B2E;
+    border: none;
+    cursor: pointer;
+    transition: background .2s ease, transform .04s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    /* เงาเบาๆ ดูมีมิติ */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logout .icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.logout:hover {
+    background-color: #8DD88C;
+    /* สีเข้มขึ้นเล็กน้อยตอน hover */
+}
+
+.logout:active {
+    background: #7AC47D;
+    transform: translateY(1px);
+}
+
+/* ============ Main content เนื้อหา============ */
+.main-content {
+    width: 80%;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #E6FFED;
+}
+
+.header {
+    top: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    padding: 16px 24px;
+    z-index: 60;
+}
+
+.header p {
+    font-weight: bold;
+    font-size: 48px;
+    margin: 10px 0 10px 15px;
+    /* ⬅️ บน-ขวา-ล่าง-ซ้าย*/
+}
+
+.box-right {
+    margin-left: auto;
+    /* ดันกล่องไปชิดขวา */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* ระยะห่างระหว่างปุ่ม */
+}
+
+.New-Patients {
+    width: 199px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background: #60DB83;
+    color: #000;
+    font-size: 20px;
+    border-radius: 20px;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .2s ease, transform .04s ease;
+    padding: 0 14px;
+    gap: 10px;
+}
+
+.New-Patients:hover {
+    background-color: #8DD88C;
+}
+
+.New-Patients:active {
+    transform: translateY(1px);
+}
+
+.Plus-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.divider {
+    width: 1px;
+    height: 50px;
+    background: #000;
+    margin: 0 4px 0 2px;
+}
+
+.patient-box {
+    width: 95%;
+    height: 610px;
+    margin: 28px 0 0 28px;
+    /* บน 0, ขวา 0, ล่าง 0, ซ้าย*/
+    padding: 0 32px 32px;
+    border-radius: 12px;
+    border: 1px solid #000;
+    background-color: #FFFFFF;
+}
+
+.patient-form {
+    padding: 10px 4px 10px;
+    /* บน 0, ซ้าย-ขวา , ล่าง*/
+}
+
+.head-patient {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.patient-Re {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.head-patient .re-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    display: block;
+}
+
+.patient-confirm {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.red-img,
+.green-img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.red-class,
+.green-class {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.patient-form2 {
+    width: 1080px;
+    height: 530px;
+    padding: 10px 4px 10px;
+    border-radius: 12px;
+    border: 1px solid #000;
+    background-color: #FAFAFA;
+}
+
+.order-id {
+    padding: 5px 10px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 คอลัมน์ตามภาพ */
+    column-gap: -20px;
+    row-gap: 10px;
+    padding: 4px 25px 8px;
+}
+
+.column1,
+.column2 {
+    display: grid;
+    gap: 8px;
+    /* ระยะบรรทัดในคอลัมน์ */
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.genotype-section {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 2px;
+    padding: 4px 25px 8px;
+    gap: 10px;
+}
+
+.genotype-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    /* ไม่มีช่องว่างแนวตั้งระหว่างแถว */
+    position: relative;
+}
+
+.genotype-list::before {
+    margin-bottom: 40px;
+    margin-left: 20px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    /* 👈 ยืดเส้นออกทางซ้าย */
+    right: -20px;
+    /* 👈 ยืดเส้นออกทางขวา */
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+
+.genotype-list::after {
+    margin-bottom: -8px;
+    margin-left: 20px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    /* 👈 ยืดเส้นออกทางซ้าย */
+    right: -20px;
+    /* 👈 ยืดเส้นออกทางขวา */
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+
+.genotype-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    gap: 10px;
+    position: relative;
+}
+
+/* เส้นแนวตั้งคั่นกลาง */
+.genotype-group::after {
+    margin-top: -11px;
+    content: "";
+    position: absolute;
+    top: 4px;
+    /* ตำแหน่งด้านบนของเส้น */
+    bottom: 4px;
+    /* ตำแหน่งด้านล่างของเส้น */
+    left: 190px;
+    /* 👈 คำนวณตำแหน่งเส้น: ห่างจากขวาพอดีกับ select */
+    width: 1px;
+    height: 318%;
+    background-color: #000;
+    /* สีของเส้น */
+}
+
+.genotype-item {
+    margin-top: -5px;
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    /* ซ้ายชื่อ, ขวากล่องเลือก */
+    align-items: center;
+    padding: 4px 0;
+    /* เส้นคั่นล่างตามภาพ */
+}
+
+.genotype-item span {
+    font-weight: normal;
+}
+
+.title-genotype {
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.genotype-list1 {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.genotype-item select {
+    margin-left: 40px;
+    /* 👈 เพิ่มช่องว่างระหว่าง span กับ select */
+    width: 350px;
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    background-color: #F2F2F2;
+    font-size: 14px;
+    font-weight: bold;
+
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237257FF' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 180px center;
+    background-size: 12px 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    padding: 2px 8px;
+}
+
+.title-genotype2 {
+    font-weight: normal;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+
+.input1 {
+    width: 250px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.input2 {
+    width: 110px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.input3 {
+    margin-left: 7px;
+    width: 308px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.input4 {
+    margin-left: 4px;
+    width: 265px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.input5 {
+    margin-left: 38px;
+    width: 265px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.input6 {
+    margin-left: 89px;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.form-title {
+    font-size: 25px;
+}
+
+.input7 {
+    margin-left: 30px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.gendername-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* 🔹 ระยะห่างเท่ากันทุกบรรทัด ปรับเพิ่ม/ลดได้ เช่น 10px หรือ 16px */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.name-genotype {
+    display: flex;
+    align-items: center;
+    /* 🔹 จัด label ให้อยู่กลางแนวตั้ง */
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.8;
+    position: relative;
+    margin-top: 10px;
+}
+
+/* เส้นแนวนอนล่างทุกบรรทัด */
+.name-genotype::after {
+    margin-bottom: -8px;
+    margin-left: 20px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    /* 👈 ยืดเส้นออกทางซ้าย */
+    right: -20px;
+    /* 👈 ยืดเส้นออกทางขวา */
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    /* ซ้าย-ขวาเต็มแนวกว้าง */
+    align-items: center;
+    padding: 8px 25px;
+}
+
+.button-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-confirm,
+.btn-cancel,
+.btn-print {
+    font-size: 14px;
+    font-weight: bold;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, transform 0.05s ease;
+    cursor: pointer;
+}
+
+.btn-confirm {
+    background-color: #60DB83;
+    color: #000;
+    border: 1px solid #60DB83;
+}
+
+.btn-confirm:hover {
+    background-color: #45c16a;
+}
+
+.btn-cancel {
+    background-color: #FF5E5E;
+    color: #000;
+    border: 1px solid #FF5E5E;
+}
+
+.btn-cancel:hover {
+    background-color: #c92f2f;
+}
+
+.btn-print {
+    background-color: #E2E2E2;
+    color: #000;
+    border: 1px solid #E2E2E2;
+}
+
+.btn-print:hover {
+    background-color: #bfbfbf;
+}
+
+.btn-confirm:active,
+.btn-cancel:active,
+.btn-print:active {
+    transform: translateY(1px);
+}
+
+/* ================= Modal พื้นหลัง ================= */
+.modal {
+    display: none;
+    /* เริ่มต้นซ่อน */
+    position: fixed;
+    z-index: 200;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* ฉากเทาโปร่งใส */
+
+    /* ✅ จัดให้อยู่กลางจอ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================= กล่องเนื้อหา Modal ================= */
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 8px;
+    width: 580px;
+    height: 280px;
+    padding: 20px;
+    border: 2px solid #000;
+}
+
+/* ปุ่มปิด (X) พร้อมวงกลม */
+.close-btn {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* เอฟเฟกต์ตอน hover */
+.close-btn:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.05);
+}
+
+.modal-label {
+    display: block;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.modal-textarea {
+    width: 100%;
+    height: 120px;
+    border-radius: 6px;
+    resize: none;
+    padding: 8px;
+    font-family: inherit;
+    border: 2px solid #000;
+}
+
+/* ปุ่มใน Modal */
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-cancel-modal {
+    width: 150px;
+    height: 30px;
+    background-color: #FFFFFF;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    cursor: pointer;
+    border: 1px solid #000;
+}
+
+.btn-send-modal {
+    width: 150px;
+    height: 30px;
+    background-color: #FF5E5E;
+    border: 1px solid #000;
+    color: #000;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.btn-cancel-modal:hover {
+    background-color: #cacaca;
+}
+
+.btn-send-modal:hover {
+    background-color: #c92f2f;
+}
+

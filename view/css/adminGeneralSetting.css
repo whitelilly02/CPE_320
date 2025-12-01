@@ -1,0 +1,481 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --greenOriginalBottom: linear-gradient(to bottom, #305038, #278133);
+    --greenOriginalRight: linear-gradient(to right, #305038, #278133);
+    --fontColorBlack: rgb(0, 0, 0);
+    --fontColorWhite: rgb(255, 255, 255);
+    --backgroundColor: #E6FFED;
+}
+
+/* headerSetting */
+
+.adminManageUserPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--backgroundColor);
+    margin-left: 350px;
+    min-height: 100vh;
+}
+
+.header h1 {
+    color: black;
+    background-color: white;
+    font-size: 25px;
+    padding: 40px 40px;
+}
+
+/* contentBox */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-box-header {
+    color: black;
+    font-size: 18px;
+    padding: 30px 50px;
+}
+
+/* --- Global Styles & Variables --- */
+:root {
+    --color-green: #28a745;
+    --color-green-light: #e9f5e9;
+    --color-red: #dc3545;
+    --color-red-light: #fff1f0;
+    --color-yellow: #ffc107;
+    --color-yellow-light: #fffbe6;
+    --color-grey-light: #f0f2f5;
+    --color-grey-medium: #d9d9d9;
+    --color-grey-dark: #8c8c8c;
+    --color-text: #333;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    margin: 0 0 1rem 0;
+    font-weight: 500;
+}
+
+/* --- Layout --- */
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.top-section {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Card Styles --- */
+.card {
+    background-color: #ffffff;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+.card-header h2 {
+    margin: 0;
+}
+
+/* --- Button Styles --- */
+.btn {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: 'Kanit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-green {
+    background: linear-gradient(to right, #305038, #278133);
+    color: white;
+}
+
+.btn-green:hover {
+    background-color: #218838;
+}
+
+.btn i {
+    margin-right: 0.5rem;
+}
+
+/* --- Upload Card --- */
+.upload-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000000;
+}
+
+.preview-area {
+    width: 100%;
+    height: 180px;
+    background-color: var(--color-grey-light);
+    border-radius: var(--border-radius);
+    display: grid;
+    place-items: center;
+    color: var(--color-grey-dark);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.upload-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px dashed var(--color-grey-medium);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.upload-label i {
+    font-size: 1.5rem;
+    color: var(--color-green);
+}
+
+.upload-label div {
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-label small {
+    color: var(--color-grey-dark);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #60DB83;
+}
+
+/* --- Positions Card --- */
+.positions-card {
+    flex: 2;
+    border: 1px solid #000000;
+}
+
+.permission-tags .tag {
+    display: inline-block;
+    background-color: var(--color-green-light);
+    color: var(--color-text);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin: 2px;
+}
+
+/* --- ISO Card --- */
+.iso-card {
+    width: 100%;
+    border: 1px solid #000000;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-normal {
+    background-color: var(--color-green-light);
+    color: var(--color-green);
+}
+
+.status-expiring {
+    background-color: var(--color-yellow-light);
+    color: #d48806;
+}
+
+.status-expired {
+    background-color: var(--color-red-light);
+    color: var(--color-red);
+}
+
+.doc-link {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.doc-link i {
+    margin-right: 0.5rem;
+    color: var(--color-grey-dark);
+}
+
+.doc-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Table Styles --- */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+    /* Prevents text wrapping */
+}
+
+.position-left th,
+.position-left td {
+    padding: 0.9rem;
+    text-align: left;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    border-top: 1px solid rgb(230, 230, 230);
+    vertical-align: middle;
+}
+
+.position-center th,
+.position-center td {
+    padding: 0.9rem;
+    text-align: center;
+    border: 1px solid #000000;
+    vertical-align: middle;
+}
+
+.position-center td.left-content {
+    text-align: left;
+}
+
+thead th {
+    color: #000000;
+    font-weight: 500;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    background-color: #fcfcfc;
+}
+
+.action-icon {
+    color: var(--color-grey-dark);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/*
+ * =================================
+ * STYLES สำหรับ POP-UP MODAL
+ * =================================
+*/
+
+/* คลาสสำหรับซ่อน/แสดง */
+.hidden {
+    display: none !important;
+}
+
+/* พื้นหลังสีเทา */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+/* ตัวกล่อง Pop-up */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 101;
+    width: 90%;
+    max-width: 500px;
+    /* ปรับขนาดความกว้างสูงสุดของ pop-up ที่นี่ */
+}
+
+/* ปุ่มปิด (X) */
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #888;
+    cursor: pointer;
+}
+
+/* Delete */
+
+.btn-delete {
+    background-color: #dc3545; /* สีแดงสำหรับปุ่มลบ */
+    color: white;
+    border: none;
+}
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* หัวข้อ Pop-up */
+.modal h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* * Styles สำหรับ Form ภายใน Pop-up
+*/
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    /* สำคัญมากเพื่อให้ padding ไม่ทำให้กล่องล้น */
+    font-size: 14px;
+}
+
+/* สำหรับช่องวันที่ 2 ช่อง (วันที่ออก/หมดอายุ) */
+.date-group {
+    display: flex;
+    gap: 15px;
+}
+
+.date-group .form-group {
+    flex: 1;
+    /* แบ่งพื้นที่เท่ากัน */
+}
+
+/* สำหรับ Checkbox (แบบ 2 คอลัมน์) */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 15px;
+    margin-bottom: 20px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+}
+
+/* ปุ่มอัปโหลดไฟล์ (แบบที่ 4, 5) */
+.file-upload-label {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    font-size: 14px;
+}
+
+.file-upload-label:hover {
+    background-color: #f0f0f0;
+}
+
+/* ซ่อน input[type="file"] ตัวจริง */
+input[type="file"].hidden {
+    display: none;
+}
+
+/* ปุ่มกดยกเลิก / ยืนยัน */
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.modal-buttons button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background-color: #f0f0f0;
+    color: #555;
+    border: 1px solid #ddd;
+}
+
+.btn-cancel:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-confirm {
+    background-color: #28a745;
+    /* สีเขียว */
+    color: white;
+}
+
+.btn-confirm:hover {
+    background-color: #218838;
+}

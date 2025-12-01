@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Knowledge & Info</title>
+	<link rel="stylesheet" href="css/userKnowledgeC.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="userKnowledgeCPage">
+		<aside class="sidebarUser" id="sidebarUser"></aside>
+
+		<main class="main-content knowledge3-content">
+			<header class="knowledge3-header">
+				<h1>Knowledge&amp;Info</h1>
+				<div class="knowledge3-header-actions">
+					<div class="knowledge3-header-separator"></div>
+					<div class="knowledge3-header-profile">
+						<img src="img/Icon (1).png" alt="ผู้ใช้งาน" class="knowledge3-header-avatar">
+						<button type="button" class="knowledge3-header-chip">ชื่อผู้ใช้งาน</button>
+					</div>
+				</div>
+			</header>
+
+			<section class="knowledge3-section">
+				<div class="knowledge3-card">
+					<div class="knowledge3-card-head">
+						<div class="knowledge3-tabs">
+							<button type="button" onclick="window.location.href='userKnowledgeA.html'" class="knowledge3-tab">ข้อมูลบริการตรวจ</button>
+							<button type="button" onclick="window.location.href='userKnowledgeB.html'" class="knowledge3-tab">กฎการแปลผล</button>
+							<button type="button" onclick="window.location.href='userKnowledgeC.html'" class="knowledge3-tab is-active">บทความและงานวิจัย</button>
+						</div>
+						<button type="button" class="knowledge3-card-icon" aria-label="เพิ่มเติม">
+							<img onclick="window.location.href='userDashboard.html'" src="img/Icon.png" alt="เพิ่มเติม" class="icon-image">
+						</button>
+					</div>
+					<div class="knowledge3-content-area">
+						<p>ยังไม่มีบทความ/วิจัย</p>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<script src="js/sidebarUser.js"></script>
+</body>
+
+</html>

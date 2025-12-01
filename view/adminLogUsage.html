@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Usage</title>
+    <link rel="stylesheet" href="css/adminLogUsage.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div class="adminLogUsagePage">
+
+        <div id="sidebarAdmin"></div>
+
+        <div class="main-content">
+            <div class="header">
+                <h1>ADMIN PAGE</h1>
+            </div>
+
+            <div class="content-box-header">
+                <h1>ตรวจสอบการเข้าใช้งาน</h1>
+            </div>
+
+            <div class="content">
+                <div class="content-box-one">
+                    <div class="box-left">
+
+                        <div class="form-group username-group">
+                            <label for="username">ชื่อผู้ใช้</label>
+                            <input type="text" id="username" placeholder="Value">
+                        </div>
+
+                        <div class="form-group position-group">
+                            <label for="position">ตำแหน่ง</label>
+                            <select id="position" required>
+                                <option value="" disabled selected>ทั้งหมด</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group level-group">
+                            <label for="level">ระดับ</label>
+                            <select id="level" required>
+                                <option value="" disabled selected>ทั้งหมด</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group action-group">
+                            <label for="action">การกระทำ</label>
+                            <select id="action" required>
+                                <option value="" disabled selected>ทั้งหมด</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group date-range-group">
+                            <label for="date-start">วันที่</label>
+                            <select id="date-start" required>
+                                <option value="" disabled selected>ทุกวัน</option>
+                                <option value="today">วันนี้</option>
+                            </select>
+                            <label for="date-end" class="label-mid">ถึง</label>
+                            <select id="date-end" required>
+                                <option value="" disabled selected>-----</option>
+                                <option value="tomorrow">พรุ่งนี้</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group time-range-group">
+                            <label for="time-start">ช่วงเวลา</label>
+                            <select id="time-start" required>
+                                <option value="" disabled selected>ทุกวัน</option>
+                                <option value="now">ตอนนี้</option>
+                            </select>
+                            <label for="time-end" class="label-mid">ถึง</label>
+                            <select id="time-end" required>
+                                <option value="" disabled selected>ทุกวัน</option>
+                                <option value="later">ทีหลัง</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group page-name-group">
+                            <label for="page-name">ชื่อหน้า</label>
+                            <select id="page-name" required>
+                                <option value="" disabled selected>ทั้งหมด</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="box-right">
+                        <button class="search-button">ค้นหา</button>
+                        <button class="clear-button">ล้างคำค้นหาทั้งหมด</button>
+                    </div>
+                </div>
+
+                <div class="content-box-two">
+                    <div class="content-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ชื่อผู้ใช้</th>
+                                    <th>วันที่ใช้งาน</th>
+                                    <th>ช่วงเวลา</th>
+                                    <th>ตำแหน่ง</th>
+                                    <th>ระดับการเข้าถึง</th>
+                                    <th>หน้าที่ทำ</th>
+                                    <th>สิ่งที่ทำ</th>
+                                    <th>หมายเหตุ</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td class="font-weight-bold">นายเทส ทดสอบ</td>
+                                    <td>21/10/68</td>
+                                    <td>00:12</td>
+                                    <td>พนักงาน</td>
+                                    <td><span class="badge badge-admin">Admin</span></td>
+                                    <td>เข้าสู่ระบบ</td>
+                                    <td>เข้าสู่ระบบ User</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">นายเทส ทดสอบ</td>
+                                    <td>21/10/68</td>
+                                    <td>00:11</td>
+                                    <td>นักเทคนิคการแพทย์</td>
+                                    <td><span class="badge badge-user">User</span></td>
+                                    <td>เข้าสู่ระบบ</td>
+                                    <td>ออกจากระบบ User</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">นายเทส ทดสอบ</td>
+                                    <td>21/10/68</td>
+                                    <td>23:11</td>
+                                    <td>เภสัช</td>
+                                    <td><span class="badge badge-user">User</span></td>
+                                    <td>หน้าผู้ป่วย</td>
+                                    <td>ยืนยันผลแลป</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">นายเทส ทดสอบ</td>
+                                    <td>21/10/68</td>
+                                    <td>22:11</td>
+                                    <td>เภสัช</td>
+                                    <td><span class="badge badge-user">User</span></td>
+                                    <td>เข้าสู่ระบบ</td>
+                                    <td>เข้าสู่ระบบ User</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">นายเทส ทดสอบ</td>
+                                    <td>21/10/68</td>
+                                    <td>21:11</td>
+                                    <td>นักเทคนิคการแพทย์</td>
+                                    <td><span class="badge badge-user">User</span></td>
+                                    <td>เข้าสู่ระบบ</td>
+                                    <td>เข้าสู่ระบบ User</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">นายเทส ทดสอบ</td>
+                                    <td>21/10/68</td>
+                                    <td>20:11</td>
+                                    <td>แพทย์</td>
+                                    <td><span class="badge badge-user">User</span></td>
+                                    <td>เข้าสู่ระบบ</td>
+                                    <td>เข้าสู่ระบบ User</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold">นายเทส ทดสอบ</td>
+                                    <td>21/10/68</td>
+                                    <td>19:11</td>
+                                    <td>พนักงาน</td>
+                                    <td><span class="badge badge-user">User</span></td>
+                                    <td>เข้าสู่ระบบ</td>
+                                    <td>เข้าสู่ระบบ User</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/sidebarAdmin.js"></script>
+
+</body>
+
+</html>

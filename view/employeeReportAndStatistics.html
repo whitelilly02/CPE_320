@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee ReportAndStatistics</title>
+    <link rel="stylesheet" href="css/employeeReportAndStatistics.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="employeeReportAndStatisticsPage">
+
+        <div class="div1">
+            <div class="sidebarEmployee" id="sidebarEmployee"></div>
+        </div>
+
+        <div class="div2">
+
+            <div class="top">
+                <div class="topLeft">
+                    <h1>Knowledge&Info</h1>
+                </div>
+                <div class="topRight">
+                    <h1>TEAM</h1>
+                </div>
+            </div>
+
+            <div class="center">
+
+                <div class="dashboard-container">
+
+                    <div class="main-content">
+
+                        <div class="card chart-card">
+                            <div class="card-header">
+                                <h2>สถิติการจัดการเคส</h2>
+                                <div class="header-right">
+                                    <button class="btn btn-export-small">ส่งออกสถิติ</button>
+                                    <div class="time-filters">
+                                        <span>Week</span>
+                                        <span class="active">Month</span>
+                                        <span>Year-2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bar-chart">
+                                <div class="bar-group">
+                                    <div class="bar" style="height: 67%; background-color: #f7e04d;"></div>
+                                    <span class="label">MON</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="height: 47%; background-color: #e895c5;"></div>
+                                    <span class="label">TUE</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="height: 56%; background-color: #a1dea4;"></div>
+                                    <span class="label">WED</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="height: 42%; background-color: #f0a861;"></div>
+                                    <span class="label">THU</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="height: 62%; background-color: #7bc4f2;"></div>
+                                    <span class="label">FRI</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="height: 44%; background-color: #b87edd;"></div>
+                                    <span class="label">SAT</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="height: 33%; background-color: #e96a6a;"></div>
+                                    <span class="label">SUN</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="small-cards-container">
+
+                            <div class="card pie-card">
+                                <h3>อัตราการปฏิเสธสิ่งส่งตรวจ</h3>
+                                <div class="pie-chart-mock" style="--p1: 90%; --c1: #a1dea4; --c2: #f08080;">
+                                </div>
+                                <div class="legend">
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #a1dea4;"></span>
+                                        <span>การอนุมัติเคส</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #f08080;"></span>
+                                        <span>การปฏิเสธเคส</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-export">ส่งออกสถิติ</button>
+                            </div>
+
+                            <div class="card pie-card">
+                                <h3>อัตราการตรวจซ้ำ</h3>
+                                <div class="pie-chart-mock" style="--p1: 95%; --c1: #a1dea4; --c2: #f08080;">
+                                </div>
+                                <div class="legend">
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #a1dea4;"></span>
+                                        <span>ส่งตรวจปกติ</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #f08080;"></span>
+                                        <span>ส่งตรวจซ้ำ</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-export">ส่งออกสถิติ</button>
+                            </div>
+
+                            <div class="card pie-card">
+                                <h3>อัตราการเกิด ADR</h3>
+                                <div class="pie-chart-mock"
+                                    style="--p1: 96%; --c1: #a1dea4; --p2: 98%; --c2: #f7e04d; --c3: #f08080;">
+                                </div>
+                                <div class="legend">
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #a1dea4;"></span>
+                                        <span>แน่นอน</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #f7e04d;"></span>
+                                        <span>เป็นไปได้มาก</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #f08080;"></span>
+                                        <span>เป็นไปได้น้อย</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-export">ส่งออกสถิติ</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+
+                        <div class="card tat-card">
+                            <h3>รายงานติดตาม TAT</h3>
+                            <div class="tat-header">
+                                <span>จำนวนเคสทั้งหมด:</span>
+                                <span class="total-count">243 คน</span>
+                            </div>
+                            <div class="pie-chart-mock tat-pie"
+                                style="--p1: 49.38%; --c1: #a1dea4; --p2: 99.59%; --c2: #f7e04d; --c3: #e96a6a;">
+                            </div>
+                            <div class="legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #a1dea4;"></span>
+                                    <span>รวดเร็ว</span>
+                                    <span>50.21%</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #f7e04d;"></span>
+                                    <span>ล่าช้า</span>
+                                    <span>49.38%</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #e96a6a;"></span>
+                                    <span>รอนาน</span>
+                                    <span>0.41%</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-export">ส่งออกสถิติ</button>
+                        </div>
+
+                        <div class="card export-system-card">
+                            <h3>ระบบการส่งออกสถิติ</h3>
+                            <div class="form-group">
+                                <label for="date-picker">เลือกช่วงเวลา</label>
+                                <input class="dateBox" type="date" id="date-picker">
+                            </div>
+                            <div class="export-options">
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" class="icon-placeholder"></input>
+                                        <p>รายการตรวจยืน</p>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" class="icon-placeholder"></input>
+                                        <p class="active">หน่วยงานที่ส่งเคส</p>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" class="icon-placeholder"></input>
+                                        <p>แพทย์ที่สั่งตรวจ</p>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" class="icon-placeholder"></input>
+                                        <p>รายการตรวจทั้งหมด</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-export primary">ส่งออกสถิติ</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/sidebarEmployee.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --greenOriginalBottom: linear-gradient(to bottom, #305038, #278133);
+    --greenOriginalRight: linear-gradient(to right, #305038, #278133);
+    --fontColorBlack: rgb(0, 0, 0);
+    --fontColorWhite: rgb(255, 255, 255);
+    --backgroundColor: #E6FFED;
+}
+
+/* headerSetting */
+
+.adminManageUserPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--backgroundColor);
+    margin-left: 350px;
+    min-height: 100vh;
+}
+
+.header h1 {
+    color: black;
+    background-color: white;
+    font-size: 50px;
+    padding: 25px 40px;
+}
+
+/* contentBox */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    background: linear-gradient(to right, #305038, #278133);
+    margin: 40px 15px 40px 100px;
+}
+
+.search-bar label {
+    color: white;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.search-bar input[type="text"],
+.search-bar select {
+    border: none;
+    padding: 12.5px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+.search-bar input[type="text"] {
+    width: 301px;
+}
+
+.search-bar select {
+    width: 231px;
+}
+
+.search-bar label[for="role"] {
+    margin-left: 8px;
+}
+
+.search-bar button {
+    background-color: #C0FFD2;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    padding: 13px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.box-right {
+    display: flex;
+    align-items: center;
+    margin: 40px 100px 40px 15px;
+}
+
+.box-right {
+    background-color: white;
+}
+
+.add-user-button {
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    padding: 20px 50px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: black 1.5px solid;
+    background: linear-gradient(to right, #305038, #278133);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.content-box-two {
+    width: 90%;
+    max-width: 1100px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    border: black 1.5px solid;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 16px 12px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+thead th {
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+tbody td {
+    font-size: 15px;
+    color: black;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.badge {
+    display: inline-block;
+    padding: 14px;
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+    border-radius: 8px;
+    width: 70%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.badge-admin {
+    background-color: #FF5E5E;
+}
+
+.badge-user {
+    background-color: #60DB83;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 70%;
+}
+
+.btn-edit {
+    background-color: white;
+    color: black;
+    border: black 1.5px solid;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.btn-delete {
+    background-color: #FF5E5E;
+    color: black;
+    border: black 1.5px solid;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ======================================== */
+/* ส่วน CSS ของ Pop-up Modal         */
+/* ======================================== */
+
+/* --- 1. สไตล์ของพื้นหลังสีเทา (Overlay) --- */
+.modal-overlay {
+    display: none;
+    /* ซ่อนไว้เป็นค่าเริ่มต้น */
+    position: fixed;
+    /* ทำให้ลอยทับหน้าเว็บ */
+    z-index: 1000;
+    /* ให้อยู่ทับองค์ประกอบอื่น */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* ให้เลื่อนได้ ถ้าจอล้น */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* สีดำโปร่งแสง 50% */
+
+    /* จัดให้อยู่กึ่งกลางจอ (Flexbox) */
+    /* display: flex; (จะถูกเปิดโดย JavaScript) */
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- 2. สไตล์ของกล่อง Pop-up สีขาว (Modal Content) --- */
+.modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 24px 40px;
+    border-radius: 8px;
+    /* ทำให้ขอบมน */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 900px;
+    /* จำกัดความกว้างสูงสุด */
+    position: relative;
+    animation: slide-down 0.3s ease-out;
+    /* เพิ่ม Animation ตอนเด้งขึ้นมา */
+}
+
+/* Animation */
+@keyframes slide-down {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* --- 3. สไตล์ส่วนหัว (Header) --- */
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    /* ขนาดตัวอักษรหัวข้อ */
+    color: #333;
+}
+
+.modal-header-close {
+    position: absolute;
+    top: 13px;
+    right: 20px;
+}
+
+.modal-close {
+    color: #888888;
+    font-size: 2rem;
+    /* ขนาดตัว 'X' */
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: #000000;
+}
+
+/* --- 4. สไตล์ส่วนเนื้อหา (Body) และ Form --- */
+.modal-body {
+    padding-bottom: 16px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* แบ่งเป็น 2 คอลัมน์เท่าๆ กัน */
+    gap: 20px 30px;
+    /* ระยะห่างระหว่างช่อง (แนวตั้ง 20px, แนวนอน 30px) */
+}
+
+.form-group {
+    display: grid;
+    /* เปลี่ยนมาใช้ Grid layout */
+    grid-template-columns: auto 1fr;
+    /* คอลัมน์แรก(label) กว้างตามเนื้อหา, คอลัมน์สอง(input) เอาที่เหลือ */
+    align-items: center;
+    /* จัดให้ label และ input อยู่กึ่งกลางแนวตั้ง */
+    gap: 16px;
+    /* ระยะห่างระหว่าง label กับ input */
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  text-align: left; 
+  width: 110px; /* <== เพิ่มบรรทัดนี้เข้าไป */
+  flex-shrink: 0; /* (ใส่กันเหนียวไว้) */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* ทำให้ padding ไม่ขยายกล่อง */
+    font-size: 1rem;
+    margin: 10px 0; /* เพิ่มระยะห่างแนวตั้ง */
+}
+
+/* --- สไตล์สำหรับกล่อง Input ที่จะมีไอคอน --- */
+.input-with-icon {
+    display: flex;
+    /* ใช้ Flexbox เพื่อจัด input กับ icon */
+    align-items: center;
+    /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    gap: 8px;
+    /* ระยะห่างระหว่าง input กับ icon */
+}
+
+/* สั่งให้ input/select ขยายเต็มพื้นที่ที่เหลือ */
+.input-with-icon input,
+.input-with-icon select,
+.input-with-icon .input-group-horizontal {
+    flex-grow: 1;
+    /* ขยายเต็ม */
+    width: 100%;
+    /* สำหรับ browser บางตัว */
+}
+
+/* --- สไตล์ของไอคอนดินสอ (✎) --- */
+.field-icon {
+    display: none;
+    /* 1. ซ่อนไอคอนไว้เป็นค่าเริ่มต้น */
+    font-size: 1.2rem;
+    color: #555;
+    flex-shrink: 0;
+    /* ไม่ให้ไอคอนถูกบีบ */
+}
+
+/* * 2. นี่คือส่วนสำคัญ:
+ * เมื่อ Modal มีคลาส ".modal-is-editing" (ที่ JavaScript จะเพิ่มให้)
+ * ให้ ".field-icon" ที่อยู่ข้างใน... แสดงผลขึ้นมา!
+ */
+.modal-is-editing .field-icon {
+    display: block;
+    /* หรือ inline-block ก็ได้ครับ */
+}
+
+/* --- สไตล์สำหรับช่อง Input แนวนอน (ชื่อ-นามสกุล) --- */
+.input-group-horizontal {
+    display: flex;
+    gap: 10px;
+    /* ระยะห่างระหว่าง 2 กล่อง */
+}
+
+.input-group-horizontal input {
+    width: 100%;
+    /* ทำให้ 2 กล่องแบ่งพื้นที่กัน */
+}
+
+/* --- 5. สไตล์ส่วนท้าย (Footer) และปุ่มยืนยัน --- */
+.modal-footer {
+    text-align: center;
+    padding: 16px 0;
+}
+
+.confirm-btn {
+    /* ปรับสไตล์ให้เข้ากับปุ่ม Search ของคุณ */
+    background-color: #C0FFD2;
+    color: black;
+    padding: 13px 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.confirm-btn:hover {
+    background-color: #a9eec1;
+    /* สีเขียวที่เข้มขึ้นเล็กน้อย */
+}
+
+/* --- CSS สำหรับหน้าจอมือถือ --- */
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        /* ทำให้เหลือ 1 คอลัมน์ */
+    }
+
+    .modal-content {
+        padding: 16px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.25rem;
+    }
+}

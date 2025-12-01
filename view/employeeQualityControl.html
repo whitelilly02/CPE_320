@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="css/employeeQualityControl.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="employeeQualityControlPage">
+
+        <div class="div1">
+            <div class="sidebarEmployee" id="sidebarEmployee"></div>
+        </div>
+
+        <div class="div2">
+
+            <div class="top">
+                <div class="topLeft">
+                    <h1>ควบคุมคุณภาพ</h1>
+                </div>
+                <div class="topRight">
+                    <h1>TEAM</h1>
+                </div>
+            </div>
+
+            <div class="center">
+
+                <div class="centerTop">
+                    <div class="search-container">
+                        <form class="filter-form">
+
+                            <div class="form-groupe">
+                                <label for="inspector-name">ชื่อผู้ตรวจ</label>
+                                <input type="text" id="inspector-name">
+                            </div>
+                            <div class="form-groupe">
+                                <label for="qc-type">ชนิด QC</label>
+                                <select id="qc-type">
+                                    <option>ทั้งหมด</option>
+                                </select>
+                            </div>
+                            <div class="form-groupe">
+                                <label for="result">ผลลัพธ์</label>
+                                <select id="result">
+                                    <option>ทั้งหมด</option>
+                                </select>
+                            </div>
+                            <div class="form-groupe">
+                                <label for="test-number">หมายเลขการตรวจ</label>
+                                <input type="text" id="test-number">
+                            </div>
+
+                            <div class="form-groupe date-range-group">
+                                <label>วันที่</label>
+                                <div class="date-inputs">
+                                    <select id="date-from">
+                                        <option>ทุกวัน</option>
+                                    </select>
+                                    <span>ถึง</span>
+                                    <input type="text" id="date-to" placeholder="----------">
+                                </div>
+                            </div>
+                            <div class="form-groupe">
+                                <label for="time-range">ช่วงเวลา</label>
+                                <select id="time-range">
+                                    <option>ทุกวัน</option>
+                                </select>
+                            </div>
+                            <div class="form-groupe">
+                                <label for="brand">ยี่ห้อ</label>
+                                <select id="brand">
+                                    <option>ทุกวัน</option>
+                                </select>
+                            </div>
+                            <div class="form-groupe">
+                                <label for="device">เครื่องมือ / ตัวอย่าง</label>
+                                <select id="device">
+                                    <option>ทั้งหมด</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="button" class="btn-search">ค้นหา</button>
+                        <button type="button" class="btn-clear">ล้างค่าที่ค้นหาทั้งหมด</button>
+                    </div>
+                </div>
+
+                <div class="centerMiddle">
+
+                    <div class="table-container">
+
+                        <div class="table-header-actions">
+                            <button class="btn-add btn-iqc" id="btnAddIQC">+ IQC</button>
+                            <button class="btn-add btn-eqa" id="btnAddEQA">+ EQA</button>
+                            <button class="btn-add btn-interlab" id="btnAddInterLab">+ Inter-Lab</button>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>หมายเลขการตรวจ</th>
+                                    <th>ชนิด QC</th>
+                                    <th>ผลลัพธ์</th>
+                                    <th>เครื่องมือ / ตัวอย่าง</th>
+                                    <th>ชื่อผู้ตรวจ</th>
+                                    <th>วันที่ตรวจคุณภาพ</th>
+                                    <th>ความคิดเห็น</th>
+                                    <th>ไฟล์แนบ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>QC-123345</td>
+                                    <td><strong>IQC</strong></td>
+                                    <td><span class="status-pass">ผ่าน</span></td>
+                                    <td>นายอาทา มหาเทพ</td>
+                                    <td>นายอาทา มหาเทพ</td>
+                                    <td>24/04/2025</td>
+                                    <td>มีความปกติ-ผิดเกณฑ์มาตรฐาน</td>
+                                    <td>
+                                        <a href="#" class="file-link edit-trigger" data-id="QC-123345" data-type="IQC"
+                                            data-instrument="นายอาทา มหาเทพ" data-inspector="นายอาทา มหาเทพ"
+                                            data-date="24/04/2025" data-status="ผ่าน" data-value="10.5" data-lab=""
+                                            data-notes="มีความปกติ-ผิดเกณฑ์มาตรฐาน" data-filename="เอกสารแนบ 1.pdf">
+
+                                            <span class="file-icon">📄</span>
+                                            <span class="file-link-text">"เอกสารแนบ 1"</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>QC-234212</td>
+                                    <td><strong>EQA</strong></td>
+                                    <td><span class="status-fail">ไม่ผ่าน</span></td>
+                                    <td>นายอาทา มหาเทพ</td>
+                                    <td>นายอาทา มหาเทพ</td>
+                                    <td>24/10/2024</td>
+                                    <td>ไม่ผ่านตามมาตรฐาน</td>
+                                    <td>
+                                        <a href="#" class="file-link edit-trigger" data-id="QC-234212" data-type="EQA"
+                                            data-instrument="นายอาทา มหาเทพ" data-inspector="นายอาทา มหาเทพ"
+                                            data-date="24/10/2024" data-status="ไม่ผ่าน" data-value="" data-lab="Lab X"
+                                            data-notes="ไม่ผ่านตามมาตรฐาน" data-filename="เอกสารแนบ 2.pdf">
+
+                                            <span class="file-icon">📄</span>
+                                            <span class="file-link-text">"เอกสารแนบ 2"</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>QC-123342</td>
+                                    <td><strong>Inter-Lab</strong></td>
+                                    <td><span class="status-pass">ผ่าน</span></td>
+                                    <td>นายอาทา มหาเทพ</td>
+                                    <td>นายอาทา มหาเทพ</td>
+                                    <td>24/09/2024</td>
+                                    <td>-</td>
+                                    <td>
+                                        <a href="#" class="file-link">
+                                            <span class="file-icon">📄</span>
+                                            "เอกสารแนบ 3"
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="modal-overlay" class="hidden"></div>
+
+    <div id="add-modal" class="modal hidden">
+
+        <div class="modal-header">
+            <div class="modal-header-text">
+                <h2 id="modal-title">เพิ่มข้อมูล IQC</h2>
+                <p>กรอกข้อมูลผลการตรวจ QC</p>
+            </div>
+            <span id="close-modal">&times;</span>
+        </div>
+
+        <form id="modal-form" class="modal-body">
+
+            <input type="hidden" id="modal-edit-id" name="edit-id">
+
+            <div class="form-group">
+                <label for="modal-test-number">หมายเลขการตรวจ :</label>
+                <input type="text" id="modal-test-number" name="test-number">
+            </div>
+
+            <div class="form-group">
+                <label for="modal-instrument">เครื่องมือ/ตัวอย่าง :</label>
+                <input type="text" id="modal-instrument" name="instrument">
+            </div>
+
+            <div class="form-group">
+                <label for="modal-date">วันที่การตรวจ / เวลา :</label>
+                <div class="input-with-icon">
+                    <input type="text" id="modal-date" name="date" placeholder="เช่น 25/11/2025 14:30">
+                    <i class="fa-regular fa-calendar-days icon-calendar"></i>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="modal-qc-type">ชนิดการตรวจ :</label>
+                <input type="text" id="modal-qc-type" name="qc-type">
+            </div>
+
+            <div class="form-group" id="iqc-field-group">
+                <label for="modal-value">ค่าที่ตรวจได้ :</label>
+                <input type="text" id="modal-value" name="value">
+            </div>
+
+            <div class="form-group hidden" id="eqa-interlab-field-group">
+                <label for="modal-lab">แลปที่เปรียบเทียบ :</label>
+                <input type="text" id="modal-lab" name="lab">
+            </div>
+
+            <div class="form-group">
+                <label for="modal-status">สถานะการตรวจ :</label>
+                <input type="text" id="modal-status" name="status">
+            </div>
+
+            <div class="form-group full-width">
+                <label for="modal-notes">หมายเหตุ :</label>
+                <textarea id="modal-notes" name="notes" rows="4"></textarea>
+            </div>
+
+            <div class="form-group file-upload-group full-width">
+                <label>เพิ่มไฟล์ใหม่ :</label>
+                <div class="file-upload-wrapper">
+                    <input type="file" id="modal-file" name="file" accept=".pdf" class="hidden-file-input">
+
+                    <label for="modal-file" class="custom-file-upload-btn">
+                        <i class="fa-solid fa-arrow-up-from-bracket icon-upload"></i>
+                        แนบไฟล์ PDF
+                    </label>
+
+                    <span id="file-name-display"></span>
+                </div>
+            </div>
+        </form>
+
+        <div class="modal-footer">
+            <button type="button" class="btn-cancel" id="btn-cancel-modal">ยกเลิก</button>
+            <button type="button" class="btn-delete hidden" id="btn-delete-modal">ลบ</button>
+            <button type="submit" form="modal-form" class="btn-save">ยืนยัน</button>
+        </div>
+    </div>
+
+    <script src="js/employeeQualityControl.js"></script>
+    <script src="js/sidebarEmployee.js"></script>
+
+</body>
+
+</html>

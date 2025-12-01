@@ -1,0 +1,454 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --greenOriginalBottom: linear-gradient(to bottom, #305038, #278133);
+    --greenOriginalRight: linear-gradient(to right, #305038, #278133);
+    --fontColorBlack: rgb(0, 0, 0);
+    --fontColorWhite: rgb(255, 255, 255);
+    --backgroundColor: #E6FFED;
+    --backgroundColorWhite: #ffff;
+}
+
+/* headerSetting */
+
+.medicaltechSendPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--backgroundColor);
+    margin-left: 350px;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 40px;
+    background-color: var(--backgroundColorWhite);
+}
+
+.header h1 {
+    color: var(--fontColorBlack);
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    border-left: 1px solid #000;
+}
+
+.newPatients {
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    background: #60DB83;
+    color: var(--fontColorBlack);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+/* ============ Main content เนื้อหา============ */
+
+/* .main-content {
+    width: 80%;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #E6FFED;
+} */
+
+/* .header {
+    top: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    padding: 16px 24px;
+    z-index: 60;
+} */
+
+/* .header p {
+    font-weight: bold;
+    font-size: 48px;
+    margin: 10px 0 10px 15px;
+} */
+
+/* .box-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+} */
+
+/* .New-Patients {
+    width: 199px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background: #60DB83;
+    color: #000;
+    font-size: 20px;
+    border-radius: 20px;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .2s ease, transform .04s ease;
+    padding: 0 14px;
+    gap: 10px;
+} */
+
+/* .New-Patients:hover {
+    background-color: #8DD88C;
+} */
+
+/* .New-Patients:active {
+    transform: translateY(1px);
+} */
+
+.sendAll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.Plus-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* .divider {
+    width: 1px;
+    height: 50px;
+    background: #000;
+    margin: 0 4px 0 2px;
+} */
+
+.send-box {
+    width: fit-content;
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid #000;
+    background-color: #FFFFFF;
+}
+
+.send-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 15px;
+}
+
+.paper-title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.search-wrap {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #314D38, #268432);
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 6px;
+    width: 550px;
+    height: 35px;
+    color: #FFFFFF;
+}
+
+.search-label {
+    font-size: 14px;
+    padding: 6px;
+}
+
+.search-input {
+    width: 330px;
+    height: 25px;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+.search-input:focus {
+    outline: none;
+    border: 2px solid #C0FFD2;
+    /* เขียวสว่างสดใส */
+    transition: all 0.25s ease-in-out;
+}
+
+.search-button {
+    width: 110px;
+    height: 25px;
+    margin-left: 10px;
+    background-color: #C0FFD2;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+/* เมื่อเอาเมาส์วางบนปุ่ม */
+.search-button:hover {
+    background-color: #bfffe0;
+    /* เขียวมิ้นต์สว่างมาก */
+    box-shadow: 0 0 10px rgba(80, 230, 150, 0.5);
+    transform: scale(1.05);
+}
+
+/* เมื่อกดปุ่ม (active) */
+.search-button:active {
+    background-color: #d7ffee;
+    /* สีเขียวเกือบขาว สดใสมาก */
+    transform: scale(0.97);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.send-grid {
+    display: flex;
+    flex-direction: row;
+}
+
+.table-scroll {
+    width: 630px;
+    height: 530px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 10px 10px 10px 10px;
+    /*(บน , ขวา 1, ล่าง , ซ้าย )*/
+    overflow: auto;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+}
+
+.order-table thead th {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding: 6px 10px;
+}
+
+.order-table tbody td {
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    height: 20px;
+}
+
+.panel-detail {
+    margin-left: 30px;
+}
+
+.form-grid {
+    gap: 2px;
+    display: grid;
+    width: 450px;
+    height: 530px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 10px 10px 50px 10px;
+    /*(บน , ขวา 1, ล่าง , ซ้าย )*/
+    overflow: auto;
+}
+
+.form-row {
+    display: grid;
+}
+
+/* ตัวหนังสือ label */
+.form-row label,
+.form-rowtwo label {
+    font-size: 14px;
+    color: #000;
+}
+
+.form-row input {
+    width: 420px;
+    height: 35px;
+    border-radius: 6px;
+    border: 1px solid #000;
+    padding-left: 8px;
+    font-weight: bold;
+}
+
+.form-rowtwo {
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    /* แบ่งสองคอลัมน์เท่ากัน */
+    column-gap: 5px;
+    /* ระยะห่างระหว่างคอลัมน์ */
+    row-gap: 2px;
+    /* ระยะห่างระหว่างแถว */
+}
+
+.form-rowtwo input {
+    width: 202px;
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid #000;
+    padding-left: 8px;
+    font-weight: bold;
+}
+
+.detail-toolbar {
+    margin-top: 5px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+}
+
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid #000;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    /* ✅ ชิดขวา */
+    align-items: center;
+    gap: 12px;
+    /* ✅ ระยะห่างระหว่างปุ่ม */
+    margin-top: 18px;
+    padding-right: 10px;
+}
+
+.btn-success {
+    width: 120px;
+    height: 30px;
+    background-color: #60DB83;
+    border: 1px solid #000;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-danger {
+    width: 120px;
+    height: 30px;
+    background-color: #FF5E5E;
+    border: 1px solid #000;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-neutral {
+    width: 100px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 1px solid #000;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* ปุ่มขอบดำธรรมดา */
+.btn-ghost:hover {
+    background-color: #e8e8e8;
+    /* สว่างขึ้นเล็กน้อย */
+    border-color: #007a2e;
+    /* ✅ ขอบเขียวอ่อน */
+    color: #007a2e;
+    transform: scale(1.03);
+    /* ขยายเบา ๆ */
+}
+
+/* ปุ่มเขียว */
+.btn-success:hover {
+    background-color: #8ff0a7;
+    /* ✅ เขียวสว่างขึ้น */
+    border-color: #007a2e;
+    transform: scale(1.03);
+}
+
+/* ปุ่มแดง */
+.btn-danger:hover {
+    background-color: #ff7a7a;
+    /* 🔥 แดงสว่างขึ้น */
+    border-color: #8b0000;
+    transform: scale(1.03);
+}
+
+/* ปุ่มเทา */
+.btn-neutral:hover {
+    background-color: #eaeaea;
+    /* เทาสว่างขึ้น */
+    border-color: #007a2e;
+    /* ให้ดู active */
+    transform: scale(1.03);
+}
+
+/* ปุ่มทั้งหมดมี transition ลื่น */
+.btn-ghost,
+.btn-success,
+.btn-danger,
+.btn-neutral {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* ===== ไฮไลท์แถวที่ถูกเลือก (เขียวอ่อน) ===== */
+.order-table tbody tr.selected {
+    background: #E0FFE0;
+    /* พื้นแถว */
+}
+
+/* เส้นเขียวบน/ล่างบาง ๆ ให้ดูเด่นขึ้น */
+.order-table tbody tr.selected {
+    box-shadow:
+        inset 0 2px 0 #c8eecf,
+        inset 0 -2px 0 #c8eecf;
+}
+
+/* ===== ซ่อนปุ่มตอนเริ่มต้น ===== */
+.panel-detail:not(.active) .detail-toolbar,
+.panel-detail:not(.active) .form-actions {
+    display: none;
+    /* รูปที่ 1: ไม่เห็นปุ่ม */
+}
+
+/* (ออปชัน) ทำให้ฟอร์มดูยังเป็นโหมดว่าง ๆ ตอนยังไม่เลือก */
+.panel-detail:not(.active) .input {
+    background-color: #ffffff;
+}
+
+/* (เมื่อมีการเลือกแถวแล้ว) */
+.panel-detail.active .detail-toolbar,
+.panel-detail.active .form-actions {
+    display: flex;
+    /* รูปที่ 2: โชว์ปุ่ม */
+}
+

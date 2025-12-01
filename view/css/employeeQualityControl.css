@@ -1,0 +1,590 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --greenOriginalBottom: linear-gradient(to bottom, #305038, #278133);
+    --greenOriginalRight: linear-gradient(to right, #305038, #278133);
+    --fontColorBlack: rgb(0, 0, 0);
+    --fontColorWhite: rgb(255, 255, 255);
+    --backgroundColor: #E6FFED;
+}
+
+/* headerSetting */
+
+.employeeDashboardPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.header h1 {
+    color: black;
+    background-color: white;
+    font-size: 50px;
+    padding: 25px 40px;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.topLeft {
+    font-size: 24px;
+}
+
+.topRight {
+    font-size: 13px;
+}
+
+.topLeft,
+.topRight {
+    display: flex;
+    align-items: center;
+    padding: 25px 40px;
+}
+
+.div2 {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-left: 350px;
+    min-height: 100vh;
+    background-color: var(--backgroundColor);
+}
+
+/* StyleContentCeter */
+
+.center {
+    flex-grow: 1;
+}
+
+.centerTop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 120px;
+}
+
+.search-container {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    max-width: 1300px;
+    padding: 15px;
+    border-radius: 12px;
+    background-image: var(--greenOriginalRight);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.filter-form {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* 3. กลุ่มของ Label และ Input */
+.form-groupe {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* ระยะห่างระหว่าง Label กับ Input */
+}
+
+.form-groupe label {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+/* 4. สไตล์ของ Input และ Select ทั้งหมด */
+.form-groupe input[type="text"],
+.form-groupe select {
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+/* 5. สไตล์เฉพาะกลุ่ม "วันที่" (ที่มี 2 ช่อง) */
+.date-range-group .date-inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.date-range-group .date-inputs span {
+    color: white;
+    font-weight: bold;
+    flex-shrink: 0;
+    /* ไม่ให้คำว่า "ถึง" ถูกบีบ */
+}
+
+.date-range-group .date-inputs select,
+.date-range-group .date-inputs input[type="text"] {
+    flex-grow: 1;
+    /* ให้ช่อง input ขยายเต็มพื้นที่ */
+}
+
+/* ทำให้ placeholder "----------" อยู่ตรงกลาง */
+.date-range-group .date-inputs input[type="text"] {
+    text-align: center;
+}
+
+/* สไตล์ของ placeholder */
+.form-groupe input::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+/* 6. คอนเทนเนอร์ปุ่ม (ด้านขวา) */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    justify-content: flex-start;
+    /* จัดปุ่มให้อยู่ด้านบน */
+    min-width: 180px;
+    /* กำหนดความกว้างขั้นต่ำให้ปุ่ม */
+}
+
+/* 7. สไตล์ปุ่ม */
+.button-container button {
+    padding: 20px 20px;
+    border: 2px solid white;
+    border-radius: 8px;
+    border: 1px solid black;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 200px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* ปุ่ม "ค้นหา" (แบบทึบ) */
+.btn-search {
+    background-color: white;
+    color: #222;
+}
+
+.btn-search:hover {
+    background-color: #f0f0f0;
+}
+
+/* ปุ่ม "ล้างค่า" (แบบโปร่งใส) */
+.btn-clear {
+    background-color: white;
+    color: #222;
+}
+
+.btn-clear:hover {
+    background-color: #f0f0f0;
+}
+
+/* 8. ทำให้หน้าตาของ Select Box สวยงาม */
+.form-groupe select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* เพิ่มลูกศร dropdown (SVG) */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1em;
+    padding-right: 30px;
+    /* เพิ่มที่ว่างสำหรับลูกศร */
+}
+
+.centerMiddle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-container {
+    width: 100%;
+    max-width: 1400px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e8e8e8;
+}
+
+/* 2. ส่วนหัวที่มีปุ่ม */
+.table-header-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-add {
+    background: var(--greenOriginalRight);
+    /* สีเขียวเข้ม */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 3. สไตล์ตาราง */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* ทำให้เส้นขอบตารางรวมเป็นเส้นเดียว */
+    white-space: nowrap;
+    /* ป้องกันข้อความตกบรรทัด */
+}
+
+/* 4. สไตล์หัวตาราง (thead) */
+thead th {
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    padding: 12px 15px;
+    border: 1px solid #000;
+}
+
+/* 5. สไตล์เนื้อหาตาราง (tbody) */
+tbody td {
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #000;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* 6. สไตล์สถานะ "ผ่าน" และ "ไม่ผ่าน" */
+.status-pass,
+.status-fail {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 13px;
+    border: 1px solid;
+    text-align: center;
+    min-width: 60px;
+}
+
+.status-pass {
+    background-color: #e6f7ec;
+    /* สีเขียวอ่อน */
+    color: #0d8c4d;
+    /* สีเขียวเข้ม */
+    border-color: #b7ebc3;
+}
+
+.status-fail {
+    background-color: #fff1f0;
+    /* สีแดงอ่อน */
+    color: #d9363e;
+    /* สีแดงเข้ม */
+    border-color: #ffccc7;
+}
+
+/* 7. สไตล์ตัวหนาในช่อง "ชนิด QC" */
+tbody td strong {
+    font-weight: 900;
+    color: #000;
+}
+
+/* 8. สไตล์ลิงก์ไฟล์แนบ */
+.file-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #333;
+}
+
+.file-link:hover {
+    text-decoration: underline;
+}
+
+.file-icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* ... (โค้ดสไตล์ตารางเดิมทั้งหมดของคุณ อยู่ข้างบนนี้) ... */
+
+
+/* ===== [ใหม่] สไตล์สำหรับ POPUP (Modal) - ตามแบบ ===== */
+
+/* คลาสสำหรับซ่อน/แสดง (เหมือนเดิม) */
+.hidden {
+    display: none !important;
+}
+
+/* 1. พื้นหลังสีเทา (Overlay) */
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* เข้มขึ้นตามแบบ */
+    z-index: 100;
+}
+
+/* 2. ตัวกล่อง Popup */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    z-index: 101;
+    width: 800px;
+    /* กว้างขึ้นตามแบบ */
+    max-width: 95%;
+    border-top: 4px solid #333;
+    /* ขอบบนสีดำ (ตามรูป) */
+}
+
+/* 3. หัวข้อ Popup */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* จัดชิดบน */
+    padding: 20px 25px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header-text h2 {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    /* ปรับขนาดตามแบบ */
+    color: #000;
+    font-weight: bold;
+}
+
+.modal-header-text p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+#close-modal {
+    font-size: 18px;
+    /* ขนาดตัว X */
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#close-modal:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+/* 4. ส่วนฟอร์มข้างใน (ใช้ Grid) */
+.modal-body {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 คอลัมน์ */
+    gap: 20px 25px;
+    /* (ระยะห่าง แถว / คอลัมน์) */
+    max-height: 70vh;
+    /* จำกัดความสูง ถ้าฟอร์มยาวมาก */
+    overflow-y: auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.input-with-icon input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1a8a48;
+    box-shadow: 0 0 0 2px rgba(26, 138, 72, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    /* อนุญาตให้ย่อขยายเฉพาะแนวตั้ง */
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+    /* ทำให้ช่องนี้กว้างเต็ม 2 คอลัมน์ */
+}
+
+/* 5. ช่องที่มีไอคอน (วันที่) */
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon .icon-calendar {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #666;
+    pointer-events: none;
+    /* ไอคอนจะได้ไม่บังการคลิก */
+}
+
+/* 6. ปุ่มอัปโหลดไฟล์ (แบบ Custom) */
+.file-upload-group {
+    grid-column: span 2;
+}
+
+.file-upload-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.hidden-file-input {
+    display: none;
+    /* ซ่อน input จริง */
+}
+
+.custom-file-upload-btn {
+    display: inline-flex;
+    /* ใช้ flex เพื่อจัดไอคอนกับข้อความ */
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.custom-file-upload-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.custom-file-upload-btn .icon-upload {
+    font-size: 14px;
+}
+
+#file-name-display {
+    font-size: 13px;
+    color: #555;
+    /* (ถ้าชื่อไฟล์ยาวไป) */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 7. ส่วนปุ่มล่าง Popup */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 20px 25px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    border-radius: 0 0 8px 8px;
+}
+
+.btn-save,
+.btn-cancel,
+.btn-delete {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* ปุ่ม "ยืนยัน" (สีเขียว) */
+.btn-save {
+    background-color: #92d050;
+    /* สีเขียวอ่อนตามแบบ */
+    color: #000;
+    /* สีตัวอักษรสีดำ */
+    border: 1px solid #70ad47;
+}
+
+.btn-save:hover {
+    background-color: #a3e06a;
+}
+
+/* ปุ่ม "ยกเลิก" (สีเทาขอบ) */
+.btn-cancel {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.btn-cancel:hover {
+    background-color: #f0f0f0;
+}
+
+/* ปุ่ม "ลบ" (ซ่อนไว้ก่อน) */
+.btn-delete {
+    background-color: #dc3545;
+    /* สีแดง (สำหรับโหมดแก้ไข) */
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}

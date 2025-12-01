@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicaltech Send Doctor</title>
+    <link rel="stylesheet" href="css/medicaltechSendDoctor.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="medicaltechSendDoctorPage">
+        <!-- Sidebar -->
+        <div class="sidebarMedicaltech" id="sidebarMedicaltech"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>ใบสั่งตรวจจากแพทย์</h1>
+                <div class="boxRight">
+                    <div class="divider"></div>
+                    <a href="#" class="icon-link">
+                        <img src="../view/img/User.png" alt="user" class="user-img">
+                    </a>
+                    <button class="newPatients">
+                        เทคนิค นายหนึ่ง
+                    </button>
+                </div>
+            </header>
+
+            <div class="patientBig">
+                <section class="patient-box">
+                    <div class="patient-infor">
+                        <h3 class="panel-title">ข้อมูลผู้ป่วย</h3>
+                        <div class="panel-head">
+                            <div class="preview-hint">Preview</div>
+                            <button class="btn-print" onclick="window.print()">พิมพ์ใบสั่งตรวจ</button>
+                        </div>
+
+                        <!-- ===== Preview Paper ===== -->
+                        <div id="print-area" class="paper-wrap">
+                            <div class="paper">
+                                <!-- Header line with title + barcode -->
+                                <div class="paper-header">
+                                    <div class="paper-title">ใบสั่งตรวจ - โรงพยาบาลรามาธิบดี</div>
+                                    <img src="/view/img/barcodesmall.png" alt="barcode" class="barcode-img">
+                                </div>
+                                <hr class="paper-sep">
+                                <!-- Patient block -->
+                                <div class="paper-row">
+                                    <p class="paper-title">ข้อมูลผู้ป่วย</p>
+                                    <div class="date-order">
+                                        <div class="date">
+                                            <div>
+                                                <span class="d">วันที่</span>
+                                                <span class="d" id="order-date"></span>
+                                            </div>
+                                            <div>
+                                                <span class="d">หมายเลขใบสั่ง</span>
+                                                <span class="d" id="order-no"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ชื่อHNแพทย์ -->
+                                <div class="name-hn">
+                                    <span class="name">ชื่อ–นามสกุล (Name) : <span id="patient-name"></span></span>
+                                    <span class="name">เลขประจำตัว (HN) : <span id="patient-hn"></span></span>
+                                </div>
+                                <div class="name-hn">
+                                    <span class="name2">แพทย์ผู้ส่งตรวจ : <span id="physician"></span></span>
+                                </div>
+
+                                <!-- Table -->
+                                <div class="order-title">รายการตรวจที่สั่ง</div>
+                                <div class="order">
+                                    <div class="order-table">
+                                        <div class="thead">
+                                            <div class="th-code">รหัสการตรวจ</div>
+                                            <div class="th-name">ชื่อการตรวจ</div>
+                                        </div>
+                                        <div class="tbody" id="order-rows"><!-- JS จะเติมแถวที่นี่ --></div>
+                                    </div>
+                                    <!-- Two note boxes -->
+                                    <div class="medicine-note">
+                                        <div class="note">
+                                            <div class="note-k">ชนิดของยาที่จะใช้ในการรักษา :</div>
+                                            <input class="input" type="text" name="order" placeholder="รายละเอียด">
+                                        </div>
+
+                                        <div class="note">
+                                            <div class="note-k">ยาที่ผู้ป่วยได้รับในปัจจุบัน :</div>
+                                            <input class="input" type="text" name="order" placeholder="รายละเอียด">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ข้อมูลเพิ่มเติม -->
+                                <div class="box-infor">
+                                    <div class="more-infor">
+                                        <div class="infor-title">ข้อมูลเพิ่มเติม</div>
+                                        <div class="infor-grid">
+                                            <div class="date-ex">
+                                                <div><span class="name">วันที่เก็บตัวอย่าง :</span> <span
+                                                        id="collected-at"></span></div>
+                                                <div><span class="name">ผู้เก็บตัวอย่าง : </span> <span
+                                                        id="collector"></span></div>
+                                            </div>
+                                            <div class="ex">
+                                                <div><span class="name2">ประเภทตัวอย่าง : </span> <span
+                                                        id="specimen-type"></span></div>
+                                                <div><span class="name2">หมายเลขภาชนะเก็บ :</span> <span
+                                                        id="container-no"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="sign-row">
+                                        <div class="sign">
+                                            <div class="line"></div>
+                                            <div class="label">ลายเซ็นแพทย์ผู้รับผลตรวจ</div>
+                                        </div>
+                                        <div class="sign">
+                                            <div class="line"></div>
+                                            <div class="label">ลายเซ็นเจ้าหน้าที่</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/medicaltechSendDoctor.js"></script>
+    <script src="js/sidebarMedicaltech.js"></script>
+
+</body>
+
+</html>

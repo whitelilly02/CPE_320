@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --greenOriginalBottom: linear-gradient(to bottom, #305038, #278133);
+    --greenOriginalRight: linear-gradient(to right, #305038, #278133);
+    --fontColorBlack: rgb(0, 0, 0);
+    --fontColorWhite: rgb(255, 255, 255);
+    --backgroundColor: #E6FFED;
+    --backgroundColorWhite: #ffff;
+}
+
+/* headerSetting */
+
+.medicaltechReportHLAgenePage {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--backgroundColor);
+    margin-left: 350px;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 40px;
+    background-color: var(--backgroundColorWhite);
+}
+
+.header h1 {
+    color: var(--fontColorBlack);
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    border-left: 1px solid #000;
+}
+
+.newPatients {
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    background: #60DB83;
+    color: var(--fontColorBlack);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+/* ============ Main content เนื้อหา============ */
+
+.patientBig {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.Plus-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.patient-box {
+    width: fit-content;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #000;
+    background-color: #FFFFFF;
+}
+
+.patient-form {
+    padding: 10px 4px 10px;
+    /* บน 0, ซ้าย-ขวา , ล่าง*/
+}
+
+.head-patient {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.head-patient .re-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    display: block;
+}
+
+.patient-form2 {
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #000;
+    background-color: #FAFAFA;
+}
+
+.order-id {
+    padding: 5px 10px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 คอลัมน์ตามภาพ */
+    column-gap: -20px;
+    row-gap: 10px;
+    padding: 4px 25px 8px;
+}
+
+.column1,
+.column2 {
+    display: grid;
+    gap: 8px;
+    /* ระยะบรรทัดในคอลัมน์ */
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.genotype-section {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 2px;
+    padding: 4px 25px 8px;
+    gap: 10px;
+}
+
+.genotype-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    /* ไม่มีช่องว่างแนวตั้งระหว่างแถว */
+    position: relative;
+}
+
+.genotype-list::before {
+    margin-bottom: 40px;
+    margin-left: 20px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    /* 👈 ยืดเส้นออกทางซ้าย */
+    right: -20px;
+    /* 👈 ยืดเส้นออกทางขวา */
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+
+.genotype-list::after {
+    margin-bottom: -8px;
+    margin-left: 20px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    /* 👈 ยืดเส้นออกทางซ้าย */
+    right: -20px;
+    /* 👈 ยืดเส้นออกทางขวา */
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+
+.genotype-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    gap: 10px;
+    position: relative;
+}
+
+/* เส้นแนวตั้งคั่นกลาง */
+.genotype-group::after {
+    margin-left: 60px;
+    margin-top: -11px;
+    content: "";
+    position: absolute;
+    top: 4px;
+    /* ตำแหน่งด้านบนของเส้น */
+    bottom: 4px;
+    /* ตำแหน่งด้านล่างของเส้น */
+    left: 190px;
+    /* 👈 คำนวณตำแหน่งเส้น: ห่างจากขวาพอดีกับ select */
+    width: 1px;
+    height: 112%;
+    background-color: #000;
+    /* สีของเส้น */
+}
+
+.genotype-item1 {
+    margin-top: -5px;
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    /* ซ้ายชื่อ, ขวากล่องเลือก */
+    align-items: center;
+    padding: 4px 0;
+    /* เส้นคั่นล่างตามภาพ */
+    position: relative;
+}
+
+.genotype-item1 span {
+    font-weight: bold;
+}
+
+.genotype-item1 select {
+    margin-left: 150px;
+    /* 👈 เพิ่มช่องว่างระหว่าง span กับ select */
+    width: 350px;
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    background-color: #F2F2F2;
+    font-size: 14px;
+    font-weight: bold;
+
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237257FF' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 150px center;
+    background-size: 12px 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    padding: 2px 8px;
+}
+
+.genotype-item1::after {
+    margin-bottom: -3px;
+    margin-left: 20px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    /* 👈 ยืดเส้นออกทางซ้าย */
+    right: -20px;
+    /* 👈 ยืดเส้นออกทางขวา */
+    height: 1px;
+    width: 274%;
+    border-bottom: 1px solid #000;
+}
+
+.genotype-item {
+    margin-top: -5px;
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    /* ซ้ายชื่อ, ขวากล่องเลือก */
+    align-items: center;
+    padding: 4px 0;
+    /* เส้นคั่นล่างตามภาพ */
+}
+
+.genotype-item span {
+    font-weight: bold;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    /* จัดปุ่มให้อยู่กึ่งกลาง */
+    margin-top: 110px;
+}
+
+.btn-secondary {
+    border: none;
+    /* ❌ เอาขอบออก */
+    outline: none;
+    /* ❌ เอาเส้นขอบเวลา focus ออก */
+    color: #fff;
+    width: 150px;
+    height: 45px;
+    border-radius: 15px;
+    /* ✅ โค้งมนแบบในภาพ */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.04s ease;
+    background: linear-gradient(to right, #314B38, #1DBE32);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(to right, #2E6040, #27C33B);
+}
+
+.btn-secondary:active {
+    transform: translateY(1px);
+}
+
+.title-genotype {
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.genotype-list1 {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.genotype-item select {
+    margin-left: 150px;
+    /* 👈 เพิ่มช่องว่างระหว่าง span กับ select */
+    width: 350px;
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    background-color: #F2F2F2;
+    font-size: 14px;
+    font-weight: bold;
+
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237257FF' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 150px center;
+    background-size: 12px 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    padding: 2px 8px;
+}
+
+.title-genotype2 {
+    font-weight: normal;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+
+.input1 {
+    width: 250px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.input2 {
+    width: 308px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.input3 {
+    margin-left: 7px;
+    width: 308px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.input4 {
+    margin-left: 4px;
+    width: 265px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.input5 {
+    margin-left: 38px;
+    width: 265px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.input6 {
+    margin-left: 89px;
+    width: 265px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.form-title {
+    font-size: 25px;
+
+}

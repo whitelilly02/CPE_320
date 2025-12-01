@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.supabase.co; img-src 'self' data:; object-src 'none';">
+    <title>รายงานผล</title>
+    <link rel="stylesheet" href="css/doctorReport.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="doctorReportPage">
+        <!-- Sidebar -->
+        <div class="sidebarDoctor" id="sidebarDoctor"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>รายงานผล</h1>
+                <div class="boxRight">
+                    <div class="divider"></div>
+                    <a href="#" class="icon-link">
+                        <img src="img/User.png" alt="user" class="user-img">
+                    </a>
+                    <button class="newPatients">
+                        ชื่อผู้ใช้งาน
+                    </button>
+                </div>
+            </header>
+            <div class="filter-container">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="patient-filter">ค้นหา (ชื่อ/HN)</label>
+                        <select id="patient-filter" class="input-select">
+                            <option value="">ทั้งหมด</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="status-select">สถานะ</label>
+                        <select id="status-select">
+                            <option value="">ทั้งหมด</option>
+                            <option value="1">รอดำเนินการ</option>
+                            <option value="2">สำเร็จ</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>วันที่สั่งตรวจ</label>
+                        <div class="date-range">
+                            <input type="date" id="date-start" aria-label="วันที่เริ่มต้น">
+                            <span class="date-separator">ถึง</span>
+                            <input type="date" id="date-end" aria-label="วันที่สิ้นสุด">
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button id="btn-search" class="search-button">ค้นหา</button>
+                    <button id="btn-clear" class="clear-button">ล้างค่า</button>
+                </div>
+            </div>
+
+
+            <!-- ตารางรายงาน -->
+            <section class="report-section">
+                <div class="report-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>NO.</th>
+                                <th>ชื่อ-นามสกุล</th>
+                                <th>เลขประจำตัว(HN)</th>
+                                <th>สถานะการตรวจ</th>
+                                <th>Genotype</th>
+                                <th>ดูผลตรวจ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="report-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/sidebarDoctor.js"></script>
+    <script src="js/doctorReport.js"></script>
+</body>
+
+</html>

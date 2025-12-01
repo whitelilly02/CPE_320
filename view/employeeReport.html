@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายงานผล</title>
+    <link rel="stylesheet" href="css/employeeReport.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="employeeReportPage">
+        <!-- Sidebar -->
+        <div class="sidebarEmployee" id="sidebarEmployee"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>รายงานผล</h1>
+                <div class="boxRight">
+                    <div class="divider"></div>
+                    <a href="#" class="icon-link">
+                        <img src="img/User.png" alt="user" class="user-img">
+                    </a>
+                    <button class="newPatients">
+                        ชื่อผู้ใช้งาน
+                    </button>
+                </div>
+            </header>
+            <div class="tab">
+                <div class="content-box-one">
+                    <div class="box-left">
+
+                        <!-- แถวที่ 1 -->
+                        <div class="filter-item">
+                            <label>ชื่อผู้ใช้</label>
+                            <input type="text" placeholder="Value">
+                        </div>
+
+                        <div class="filter-item">
+                            <label>ตำแหน่ง</label>
+                            <select>
+                                <option selected>ทั้งหมด</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-item">
+                            <label>ระดับ</label>
+                            <select>
+                                <option selected>ทั้งหมด</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-item">
+                            <label>การทำงานของผู้ใช้</label>
+                            <select>
+                                <option selected>ทั้งหมด</option>
+                            </select>
+                        </div>
+
+                        <!-- แถวที่ 2 -->
+                        <div class="filter-item">
+                            <label>วันที่</label>
+                            <select>
+                                <option selected>ทุกวัน</option>
+                            </select>
+                            <label class="small">ถึง</label>
+                            <select>
+                                <option selected>-----</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-item">
+                            <label>ช่วงเวลา</label>
+                            <select>
+                                <option selected>ทุกวัน</option>
+                            </select>
+                            <label class="small">ถึง</label>
+                            <select>
+                                <option selected>ทุกวัน</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-item">
+                            <label>ชื่อหน้า</label>
+                            <select>
+                                <option selected>ทั้งหมด</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-item"></div>
+                    </div>
+
+                    <div class="box-right2">
+                        <button class="search-button">ค้นหา</button>
+                        <button class="clear-button">ล้างคำค้นหาทั้งหมด</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ตารางรายงาน -->
+            <section class="report-section">
+                <div class="report-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>NO.</th>
+                                <th>ชื่อ-นามสกุล</th>
+                                <th>เลขประจำตัว(HN)</th>
+                                <th>สถานะการตรวจ</th>
+                                <th>Genotype</th>
+                                <th>ดูผลตรวจ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="report-body">
+                            <tr>
+                                <td>1</td>
+                                <td>นายบาส ทดสอบ</td>
+                                <td>HN000011</td>
+                                <td><span class="badge">รอดำเนินการ</span></td>
+                                <td>CYP2D6</td>
+                                <td><button class="select-btn" type="button" onclick="location.href='/view/employeeReportCYP2D6.html'">เลือก</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>นายบาส ทดสอบ</td>
+                                <td>HN000011</td>
+                                <td><span class="badge">รอดำเนินการ</span></td>
+                                <td>VKORC1</td>
+                                <td><button class="select-btn" type="button" onclick="location.href='/view/employeeReportVKORC1.html'">เลือก</button></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>นายบาส ทดสอบ</td>
+                                <td>HN000011</td>
+                                <td><span class="badge">รอดำเนินการ</span></td>
+                                <td>2D6</td>
+                                <td><button class="select-btn" type="button" onclick="location.href='/view/employeeReport2D6.html'">เลือก</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/sidebarEmployee.js"></script>
+</body>
+
+</html>

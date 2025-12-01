@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicaltech 2D6 Detail</title>
+    <link rel="stylesheet" href="css/medicaltechReport2D6Detail.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="medicaltechReport2D6DetailPage">
+        <!-- Sidebar -->
+        <div class="sidebarMedicaltech" id="sidebarMedicaltech"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>ผู้ป่วย</h1>
+                <div class="boxRight">
+                    <div class="divider"></div>
+                    <a href="#" class="icon-link">
+                        <img src="img/User.png" alt="user" class="user-img">
+                    </a>
+                    <button class="newPatients">
+                        เทคนิค นายหนึ่ง
+                    </button>
+                </div>
+            </header>
+
+            <div class="patientBig">
+                <section class="patient-box">
+                    <div class="patient-form">
+                        <div class="head-patient">
+                            <div class="patient-Re">
+                                <a href="medicaltechReport2D6.html">
+                                    <img src="img/Re.png" alt="re" class="re-img">
+                                </a>
+                                <div class="form-title">แก้ไขรายละเอียดผลตรวจ</div>
+                            </div>
+                            <div class="patient-confirm">
+                                <div class="red-class">
+                                    <div class="confirm-title1">ผลการยืนยันจากเทคนิกการแพทย์ :</div>
+                                    <img src="img/red.png" alt="red" class="red-img">
+                                </div>
+                                <div class="green-class">
+                                    <div class="confirm-title1">ผลการยืนยันจากเภสัช:</div>
+                                    <img src="img/green.png" alt="green" class="green-img">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="patient-form2">
+                            <p class="order-id">หมายเลขใบสั่งตรวจ : TR0011</p>
+                            <div class="form-grid">
+                                <div class="column1">
+                                    <div class="form-group">
+                                        <label>ชื่อ-นามสกุล (Name) :</label>
+                                        <input type="text" id="patientName" class="input1" value="นายเทส ทดสอบ">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>รหัสการตรวจ :</label>
+                                        <input type="text" id="testCode" class="input2" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>ชื่อการตรวจ :</label>
+                                        <input type="text" id="testName" class="input3" value="">
+                                    </div>
+                                </div>
+
+                                <div class="column2">
+                                    <div class="form-group">
+                                        <label>เลขประจำตัว (HN) :</label>
+                                        <input type="text" id="hn" class="input6" value="HN00001">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>ชนิดของยาที่จะใช้ในการรักษา :</label>
+                                        <input type="text" id="treatmentDrug" class="input4" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>ยาที่ผู้ป่วยได้รับในปัจจุบัน :</label>
+                                        <input type="text" id="currentMedications" class="input5" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="genotype-section">
+                                <div class="genotype-list1">
+                                    <div class="title-genotype">ยีนที่ตรวจ : </div>
+                                    <div class="title-genotype2">2D6 new </div>
+                                </div>
+
+                                <div class="genotype-list">
+                                    <div class="title-genotype">Genotype :</div>
+                                    <div class="genotype-group">
+                                        <div class="genotype-item1">
+                                            <span>CYP2D6*4 (1847G>A)</span>
+                                            <input type="text" class="input7" placeholder="">
+                                        </div>
+                                        <div class="genotype-item">
+                                            <span>CYP2D6*10 (100C>T) </span>
+                                            <input type="text" class="input7" placeholder="">
+                                        </div>
+                                        <div class="genotype-item">
+                                            <span>CYP2D6*41 (2989G>A)</span>
+                                            <input type="text" class="input7" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gendername-group">
+                                    <div class="name-genotype">
+                                        <label>CNV intron 2 :</label>
+                                    </div>
+
+                                    <div class="name-genotype">
+                                        <label>CNV exon 9 :</label>
+                                    </div>
+
+                                    <div class="name-genotype">
+                                        <label>Result</label>
+                                    </div>
+
+                                    <div class="name-genotype">
+                                        <label>Phenotype :</label>
+                                    </div>
+
+                                    <div class="name-genotype">
+                                        <label>Predicted Phenotype :</label>
+                                    </div>
+
+                                    <div class="name-genotype">
+                                        <label>Therapeutic recommendation :</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <div class="button-btn">
+                                    <button class="btn-confirm">ยืนยันผลตรวจ</button>
+                                    <button class="btn-cancel">ส่งแก้ไขผลตรวจ</button>
+                                </div>
+                                <button class="btn-print">พิมพ์ใบผลตรวจ</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <!-- Modal (ส่งแก้ไข) -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>ส่งแก้ไข</h2>
+            <label class="modal-label">ระบุเหตุผลการส่งกลับแก้ไข</label>
+            <textarea class="modal-textarea"></textarea>
+            <div class="modal-actions">
+                <button class="btn-cancel-modal" id="cancelModal">ยกเลิก</button>
+                <button class="btn-send-modal">ส่งแก้ไข</button>
+            </div>
+        </div>
+
+        <script src="js/medicaltechDetail.js"></script>
+        <script src="js/sidebarMedicaltech.js"></script>
+
+</body>
+
+</html>

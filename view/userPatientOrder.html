@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGx System</title>
+    <link rel="stylesheet" href="css/userPatientOrder.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="userPatientOrder">
+        <!-- Sidebar -->
+        <div class="sidebarDoctor" id="sidebarDoctor"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>สั่งตรวจ</h1>
+                <div class="boxRight">
+                    <div class="divider"></div>
+                    <img src="img/User.png" alt="user" class="user-img" onclick="">
+                    <button class="newPatients">ชื่อผู้ใช้งาน</button>
+                </div>
+            </header>
+            <div class="patientBig">
+                <section class="patient-box">
+                    <div class="order-patient">
+                        <div class="patient">
+                            <div class="form-title">ข้อมูลผู้ป่วย</div>
+                            <!-- กล่องข้อมูลผู้ป่วย -->
+                            <div id="patient-info" class="patient-info">
+                                <div class="form-group">
+                                    <label><strong>ชื่อ-นามสกุล (Name):</strong></label>
+                                    <select id="patient-select" class="input-select">
+                                        <option value="">-- เลือกผู้ป่วย --</option>
+                                    </select>
+                                </div>
+                                <p><strong>เลขประจำตัว (HN):</strong> <span id="patient-hn">-</span></p>
+                                <div class="form-group">
+                                    <label><strong>แพทย์ (Physician):</strong></label>
+                                    <select id="physician-select" class="input-select">
+                                        <option value="">-- เลือกแพทย์ --</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-container">
+                            <div class="row1">
+                                <div class="form-field1">
+                                    <div class="form-label">เหตุผลที่สั่งตรวจ :</div>
+                                    <div class="input">
+                                        <input id="physician_order_input" class="input1" type="text" name="physician_order"
+                                            placeholder="ระบุเหตุผลการสั่งตรวจ" />
+                                    </div>
+                                </div>
+
+                                <div class="column">
+                                    <div class="form-field2">
+                                        <div class="form-label">ยาที่ผู้ป่วยได้รับในปัจจุบัน</div>
+                                        <div class="input">
+                                            <input id="patient_medication_input" class="input2" type="text" name="patient_medication"
+                                                placeholder="ระบุยาที่ผู้ป่วยได้รับ" />
+                                        </div>
+                                    </div>
+                                    <div class="form-field2">
+                                        <div class="form-label">โปรดระบุชนิดของยาที่จะใช้ในการรักษา : </div>
+                                        <div class="input">
+                                            <input id="drug_name_input" class="input3" type="text" name="drug_name"
+                                                placeholder="ระบุยาที่จะใช้ในการรักษา" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- เลือกรายการตรวจวินิจฉัย-->
+                                <div class="check-page">
+                                    <div class="sel-title">เลือกรายการตรวจวินิจฉัย :</div>
+                                    <div class="check-box">
+                                        <div class="test-tabs">
+                                            <button class="tab-btn active" data-tab="tab-snp">SNP genotyping
+                                                test</button>
+                                            <button class="tab-btn" data-tab="tab-hla">HLA/Drug-related SCAR screening
+                                                test</button>
+                                            <button class="tab-btn" data-tab="tab-func">Functional genomics
+                                                test</button>
+                                            <button class="tab-btn" data-tab="tab-tox">Drug/Gene-related toxicity
+                                                test</button>
+                                        </div>
+                                        <hr>
+                                        <div class="check-grid">
+                                            <!-- คอลัมน์ 1 -->
+                                            <div class="checklist">
+                                                <!-- TAB: SNP -->
+                                                <div class="tab-panel" id="tab-snp">
+                                                    <label class="chk"><input type="checkbox" data-code="400097"
+                                                            data-name="Genomic DNA Extraction" checked> Genomic DNA
+                                                        Extraction</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for UGT1A1"data-code="410002">
+                                                        PGx
+                                                        for
+                                                        UGT1A1</label>
+                                                    <label class="chk"><input type="checkbox" data-name="PGx for DPYD"data-code="410060">
+                                                        PGx
+                                                        for
+                                                        DPYD</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for DPYD (7 SNPs)" data-code="410087">
+                                                        PGx
+                                                        for DPYD (7 SNPs)</label>
+                                                    <label class="chk"><input type="checkbox" data-name="PGx for TPMT"data-code="400290">
+                                                        PGx
+                                                        for
+                                                        TPMT</label>
+                                                    <label class="chk"><input type="checkbox" data-name="TPMT activity"data-code="410062">
+                                                        TPMT
+                                                        activity</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="TPMT + TPMT activity"data-code="410078">
+                                                        TPMT
+                                                        + TPMT activity</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for NUDT15"data-code="410066">
+                                                        PGx
+                                                        for
+                                                        NUDT15</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="Thiopurines profile" data-code="410068">
+                                                        Thiopurines profile</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="ITPA genotyping"data-code="410079">
+                                                        ITPA
+                                                        genotyping</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for CYP1A2"data-code="400276">
+                                                        PGx
+                                                        for
+                                                        CYP1A2</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for CYP2A6"data-code="400277">
+                                                        PGx
+                                                        for
+                                                        CYP2A6</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for CYP2B6"data-code="400278">
+                                                        PGx
+                                                        for
+                                                        CYP2B6</label>
+                                                </div>
+                                                <!-- TAB: HLA -->
+                                                <div class="tab-panel" id="tab-hla" style="display:none;">
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410067"
+                                                            data-name="PGx for HLA-B*13:01 สปสช">
+                                                        PGx for HLA-B*13:01 สปสช
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410052"
+                                                            data-name="PGx for HLA-B*15:02 สปสช.">
+                                                        PGx for HLA-B*15:02 สปสช.
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410053"
+                                                            data-name="PGx for HLA-B*57:01 สปสช.">
+                                                        PGx for HLA-B*57:01 สปสช.
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410054"
+                                                            data-name="PGx for HLA-B*58:01 สปสช">
+                                                        PGx for HLA-B*58:01 สปสช
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410055"
+                                                            data-name="PGx for HLA-B*35:05 สปสช.">
+                                                        PGx for HLA-B*35:05 สปสช.
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410059"
+                                                            data-name="HLA-B for Dapsone (HLA-B*13:01)">
+                                                        HLA-B for Dapsone (HLA-B*13:01)
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="400286"
+                                                            data-name="PGx for Carbamazepine (HLA-B*15:02) ">
+                                                        PGx for Carbamazepine (HLA-B*15:02)
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410065"
+                                                            data-name="HLA-A for Carbama bzepine (HLA-A*31:01)">
+                                                        HLA-A for Carbama bzepine (HLA-A*31:01)
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410074"
+                                                            data-name="Carbamazepine Profile">
+                                                        Carbamazepine Profile
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="400285"
+                                                            data-name="PGx for Abacavir (HLA-B*57:01)">
+                                                        PGx for Abacavir (HLA-B*57:01)
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="400284"
+                                                            data-name="PGx for Allopurinol (HLA-B*58:01)">
+                                                        PGx for Allopurinol (HLA-B*58:01)
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="400288"
+                                                            data-name=" PGx for Nevirapine (HLA-B*35:05)">
+                                                        PGx for Nevirapine (HLA-B*35:05)
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410056"
+                                                            data-name="PGx for HLA-B (PCR-SSO)">
+                                                        PGx for HLA-B (PCR-SSO)
+                                                    </label>
+                                                </div>
+                                                <!-- TAB: Functional genomics test -->
+                                                <div class="tab-panel" id="tab-func" style="display:none;">
+                                                    <label class="chk">
+                                                        <input type="checkbox"
+                                                            data-name="Busulfan Personalized Medicine" data-code="410063">
+                                                        Busulfan Personalized Medicine
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox"
+                                                            data-name="Therapeutic drug monitoring (Functional)"data-code="410051">
+                                                        Therapeutic drug monitoring (Functional)
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-name="Tamoxifen (Functional)"data-code="410080">
+                                                        Tamoxifen (Functional)
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-name="Fludarabine (Functional)"data-code="410081">
+                                                        Fludarabine (Functional)
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox"
+                                                            data-name="Cyclophosphamide (Functional)"data-code="410082">
+                                                        Cyclophosphamide (Functional)
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-name="6-MP Metabolites"data-code="410083">
+                                                        6-MP Metabolites
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-name="Nifedipine (Functional)"data-code="410084">
+                                                        Nifedipine (Functional)
+                                                    </label>
+                                                </div>
+                                                <!-- TAB: Drug/Gene-related toxicity test -->
+                                                <div class="tab-panel" id="tab-tox" style="display:none;">
+                                                    <label class="chk"><input type="checkbox" data-code="410028"
+                                                            data-name="PGx for Acetaminophen (CYP2D6)" > PGx for
+                                                        Acetaminophen (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Amitriptyline (CYP2D6)" data-code="410003"> PGx for
+                                                        Amitriptyline (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Aripiprazole (CYP2D6)"data-code="410004"> PGx for
+                                                        Aripiprazole
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Atomoxetine (CYP2D6)"data-code="410005"> PGx for
+                                                        Atomoxetine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Azathioprine (TPMT)"data-code="410036"> PGx for
+                                                        Azathioprine
+                                                        (TPMT)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Carvedilol (CYP2D6)"data-code="410006"> PGx for Carvedilol
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Citalopram (CYP2D6)"data-code="410029"> PGx for Citalopram
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Clomipramine (CYP2D6)"data-code="410007"> PGx for
+                                                        Clomipramine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Clopidogrel (CYP2C19)"data-code="400287"> PGx for
+                                                        Clopidogrel
+                                                        (CYP2C19)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Clozapine (CYP2D6)"data-code="410008"> PGx for Clozapine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Desloratadine (CYP2D6)"data-code="410009"> PGx for
+                                                        Desloratadine (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Dextromethorphan (CYP2D6)"data-code="410010"> PGx for
+                                                        Dextromethorphan (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Efavirenz (All in one assay)"data-code="410034"> PGx for
+                                                        Efavirenz (All in one assay)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Fluoxetine (CYP2D6)"data-code="410030"> PGx for Fluoxetine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Galantamine (CYP2D6)"data-code="410011"> PGx for
+                                                        Galantamine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Gefitinib (CYP2D6)"data-code="410032"> PGx for Gefitinib
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Imipramine (CYP2D6)"data-code="410012"> PGx for Imipramine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Irinotecan (UGT1A1)"data-code="410033"> PGx for Irinotecan
+                                                        (UGT1A1)</label>
+                                                </div>
+                                            </div>
+                                            <!-- คอลัมน์ 2 -->
+                                            <div class="checklist">
+                                                <div class="tab-panel" id="tab-snp-2">
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for CYP2C19" data-code="400279" >
+                                                        PGx
+                                                        for
+                                                        CYP2C19</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for CYP2C9" data-code="400280">
+                                                        PGx
+                                                        for
+                                                        CYP2C9</label>
+                                                    <label class="chk"><input type="checkbox" data-name="PGx for CYP2D6"
+                                                            data-code="400281"> PGx for CYP2D6</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for CYP3A4"data-code="400282">
+                                                        PGx
+                                                        for
+                                                        CYP3A4</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for CYP3A5"data-code="400283">
+                                                        PGx
+                                                        for
+                                                        CYP3A5</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="Pyrosequencing for SNP"data-code="400293">
+                                                        Pyrosequencing for SNP</label>
+                                                    <label class="chk"><input type="checkbox" data-name="PGx for APOE"data-code="410061">
+                                                        PGx
+                                                        for
+                                                        ApoE</label>
+                                                    <label class="chk"><input type="checkbox" data-name="PGx for NAT2"data-code="410069">
+                                                        PGx
+                                                        for
+                                                        NAT2</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="MTHFR genotyping"data-code="410077">
+                                                        MTHFR
+                                                        genotyping</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Statins"data-code="410071">
+                                                        PGx
+                                                        for
+                                                        Statins</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="RVR1 & CCA1A5 genotyping"data-code="410085">
+                                                        RVR1 &amp; CCA1A5 genotyping</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Cardiovascular drugs"data-code="410073"> PGx for
+                                                        Cardiovascular
+                                                        drugs</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Oncology panel"data-code="410075">
+                                                        PGx for Oncology panel</label>
+                                                </div>
+                                                <!-- TAB: HLA -->
+                                                <div class="tab-panel" id="tab-hla" style="display:none;">
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410064"
+                                                            data-name="PGx for Erythropoietin">
+                                                        PGx for Erythropoietin
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410070"
+                                                            data-name="HLA for DPP4i (HLA-DQB1*03:01)">
+                                                        HLA for DPP4i (HLA-DQB1*03:01)
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410072"
+                                                            data-name="PGx for Co-trimoxazole ">
+                                                        PGx for Co-trimoxazole
+                                                    </label>
+                                                    <label class="chk">
+                                                        <input type="checkbox" data-code="410076"
+                                                            data-name="HLA Class II for Allergy">
+                                                        HLA Class II for Allergy
+                                                    </label>
+                                                </div>
+                                                <!-- TAB: Drug/Gene-related toxicity test -->
+                                                <div class="tab-panel" id="tab-tox" style="display:none;">
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Mercaptopurine (TPMT)" data-code="410037"> PGx for
+                                                        Mercaptopurine (TPMT)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Metoprolol (CYP2D6)"data-code="410013"> PGx for Metoprolol
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Nortriptyline (CYP2D6)"data-code="410014"> PGx for
+                                                        Nortriptyline (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Olanzapine (CYP2D6)"data-code="410031"> PGx for Olanzapine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Paroxetine (CYP2D6)"data-code="410015"> PGx for Paroxetine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Perphenazine (CYP2D6)"data-code="410016"> PGx for
+                                                        Perphenazine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Pimozide (CYP2D6)"data-code="410017"> PGx for Pimozide
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Propafenone (CYP2D6)"data-code="410018"> PGx for
+                                                        Propafenone
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Propranolol (CYP2D6)"data-code="410019"> PGx for
+                                                        Propranolol
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Protriptyline (CYP2D6)"data-code="410020"> PGx for
+                                                        Protriptyline (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Risperidone (CYP2D6)"data-code="410021"> PGx for
+                                                        Risperidone
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Terbinafine (CYP2D6)"data-code="410022"> PGx for
+                                                        Terbinafine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Tetrabenazine (CYP2D6)"data-code="410023"> PGx for
+                                                        Tetrabenazine (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Thioridazine (CYP2D6)"data-code="410024"> PGx for
+                                                        Thioridazine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Timolol (CYP2D6)"data-code="410025"> PGx for Timolol
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Tolterodine (CYP2D6)"data-code="410026"> PGx for
+                                                        Tolterodine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Trimipramine (CYP2D6)"data-code="410027"> PGx for
+                                                        Trimipramine
+                                                        (CYP2D6)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Thioguanine (TPMT)"data-code="410038"> PGx for Thioguanine
+                                                        (TPMT)</label>
+                                                </div>
+                                            </div>
+                                            <!--คอลัมน์ที่ 3 -->
+                                            <div class="checklist">
+                                                <div class="tab-panel" id="tab-tox" style="display:none;">
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Voriconazole (CYP2C19)" data-code="410050"> PGx for
+                                                        Voriconazole
+                                                        (CYP2C19)</label>
+                                                    <label class="chk"><input type="checkbox"
+                                                            data-name="PGx for Warfarin* (CYP2C9/VKORC1)" data-code="400289"> PGx for
+                                                        Warfarin*
+                                                        (CYP2C9/VKORC1)</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row2">
+                                <div class="selected-tests">
+                                    <div class="panel-title">รายการตรวจวินิจฉัย :</div>
+
+                                    <div class="selected-table">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 140px;">รหัสการตรวจ</th>
+                                                    <th>ชื่อการตรวจ</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="selected-tests-body">
+                                                <!-- แถวรายการที่เลือกจะถูกเติมโดยสคริปต์ -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--ปุ่ม-->
+                        <div class="form-actions">
+                            <button type="button" id="submit-order-btn" class="btn-secondary">บันทึกการส่งตรวจ</button>
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="js/userPatientOrder.js"></script>
+    <script src="js/sidebarDoctor.js"></script>
+
+</body>
+
+</html>

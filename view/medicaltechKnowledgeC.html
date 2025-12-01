@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicaltech Knowledge</title>
+    <link rel="stylesheet" href="css/medicaltechKnowledge.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="medicaltechKnowledgePage">
+
+        <div class="div1">
+            <div class="sidebarMedicaltech" id="sidebarMedicaltech"></div>
+        </div>
+
+        <div class="div2">
+
+            <div class="top">
+                <div class="topLeft">
+                    <h1>Knowledge&Info</h1>
+                </div>
+                <div class="topRight">
+                    <h1>TEAM</h1>
+                </div>
+            </div>
+
+            <div class="center">
+                <div class="main-container">
+                    <div class="tab-header">
+                        <nav class="tab-nav">
+                            <a href="medicaltechKnowledgeA.html" class="tab-btn">ข้อมูลบริการตรวจ</a>
+                            <a href="medicaltechKnowledgeB.html" class="tab-btn">กฎการแปลผล</a>
+                            <a href="medicaltechKnowledgeC.html" class="tab-btn active">บทความและงานวิจัย</a>
+                        </nav>
+                        <button class="add-new-btn" id="open-add-modal-btn-p3">
+                            <span>+</span> เพิ่มเอกสารใหม่
+                        </button>
+                    </div>
+
+                    <div class="tab-content-area">
+                        <div class="no-content edit-trigger-p3">
+                            ยังไม่มีบทความ/วิจัย
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-overlay" id="modal-overlay-p3"></div>
+
+                <div class="modal" id="add-modal-p3">
+                    <div class="modal-header">
+                        <h3>เพิ่มไฟล์บทความและงานวิจัย</h3>
+                        <button class="modal-close-btn-circle" type="button">&times;</button>
+                    </div>
+                    <p class="modal-subtitle">ระบุเนื้อหาบทความที่ต้องการ</p>
+                    <div class="modal-body">
+                        <div class="modal-form-group">
+                            <label for="add-article-name-p3">ชื่อบทความ</label>
+                            <input type="text" id="add-article-name-p3" name="add-article-name-p3">
+                        </div>
+                        <div class="modal-form-group">
+                            <label for="add-content-p3">เนื้อหาเพิ่มเติม</label>
+                            <input type="text" id="add-content-p3" name="add-content-p3">
+                        </div>
+                        <div class="modal-form-group">
+                            <label>เพิ่มไฟล์ใหม่</label>
+                            <label class="file-upload-btn" for="add-file-input-p3">
+                                <span class="upload-icon"></span> แบบไฟล์ PDF
+                            </label>
+                            <input type="file" id="add-file-input-p3" class="file-input-hidden">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-modal btn-cancel-outline">ยกเลิก</button>
+                        <button type="button" class="btn-modal btn-confirm-light">ยืนยัน</button>
+                    </div>
+                </div>
+
+                <div class="modal" id="edit-modal-p3">
+                    <div class="modal-header">
+                        <h3>แก้ไขไฟล์บทความและงานวิจัย</h3>
+                        <button class="modal-close-btn-circle" type="button">&times;</button>
+                    </div>
+                    <p class="modal-subtitle">ระบุเนื้อหาบทความที่ต้องการ</p>
+                    <div class="modal-body">
+                        <div class="modal-form-group form-group-with-icon">
+                            <label for="edit-article-name-p3">ชื่อบทความ</label>
+                            <input type="text" id="edit-article-name-p3" name="edit-article-name-p3"
+                                value="ชื่อบทความ (ตัวอย่าง)">
+                        </div>
+                        <div class="modal-form-group form-group-with-icon">
+                            <label for="edit-content-p3">เนื้อหาเพิ่มเติม</label>
+                            <input type="text" id="edit-content-p3" name="edit-content-p3">
+                        </div>
+                        <div class="modal-form-group">
+                            <label>เพิ่มไฟล์ใหม่</label>
+                            <div class="file-display-box">
+                                <span>ข้อมูลบริการตรวจ.PDF</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-modal btn-cancel-outline">ยกเลิก</button>
+                        <button type="button" class="btn-modal btn-delete">ลบ</button>
+                        <button type="button" class="btn-modal btn-confirm-light">ยืนยัน</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/medicaltechKnowledgeC.js"></script>
+    <script src="js/sidebarMedicaltech.js"></script>
+
+</body>
+
+</html>

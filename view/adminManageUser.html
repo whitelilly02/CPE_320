@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage User</title>
+    <link rel="stylesheet" href="./css/adminManageUser.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="adminManageUserPage">
+
+        <div class="sidebarAdmin" id="sidebarAdmin">x</div>
+
+        <div class="main-content">
+            <div class="header">
+                <h1>ADMIN PAGE</h1>
+            </div>
+
+            <div class="content">
+                <div class="content-box">
+                    <div class="box-left">
+                        <form class="search-bar" id="search-form">
+
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="Value">
+
+                            <label for="role">Role</label>
+                            <select id="role" name="role">
+                                <option value="all">All</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+
+                            <button type="submit">Search</button>
+
+                        </form>
+                    </div>
+
+                    <div class="box-right">
+                        <button class="add-user-button">Create New user</button>
+                    </div>
+                </div>
+
+                <div class="content-box-two">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ชื่อผู้ใช้</th>
+                                <th>E-mail</th>
+                                <th>บทบาท</th>
+                                <th>ระดับการเข้าถึง</th>
+                                <th>Date Added</th>
+                                <th>การแก้ไข</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                 <tr>
+                                <tbody id="user-table-body"></tbody>
+                                <script src="../renderer.js"></script>
+                                
+<!--                                 
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn btn-edit">แก้ไข</button>
+                                        <button class="btn btn-delete">ลบ</button>
+                                    </div>
+                                </td>
+                                </td> -->
+                                 
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="user-modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header-close">
+                <span id="close-modal-btn" class="modal-close">&times;</span>
+            </div>
+
+            <div class="modal-header">
+                <h2 id="modal-title">แก้ไขข้อมูลผู้ใช้งาน</h2>
+            </div>
+
+            <div class="modal-body">
+                <form class="form-grid">
+
+                    <form class="form-grid">
+
+                        <div class="form-column">
+
+                            <div class="form-group">
+                                <label for="modal-firstname">ชื่อผู้ใช้งาน</label>
+                                <div class="input-with-icon">
+                                    <div class="input-group-horizontal">
+                                        <input type="text" id="modal-firstname">
+                                        <input type="text" id="modal-lastname">
+                                    </div>
+                                    <span class="field-icon">&#9998;</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modal-email">Email</label>
+                                <div class="input-with-icon">
+                                    <input type="email" id="modal-email">
+                                    <span class="field-icon">&#9998;</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modal-password">รหัสผ่าน</label>
+                                <div class="input-with-icon">
+                                    <input type="password" id="modal-password" value="●●●●●●●●">
+                                    <span class="field-icon">&#9998;</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-column">
+
+                            <div class="form-group">
+                                <label for="modal-job-role">บทบาท</label>
+                                <div class="input-with-icon">
+                                    <select id="modal-job-role">
+                                        <option value="doctor">แพทย์</option>
+                                        <option value="pharmacist">เภสัช</option>
+                                        <option value="medical-staff">นักเทคนิคการแพทย์</option>
+                                        <option value="staff">พนักงาน</option>
+                                    </select>
+                                    <span class="field-icon">&#9998;</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modal-access-level">ระดับการเข้าถึง</label>
+                                <div class="input-with-icon">
+                                    <select id="modal-access-level">
+                                        <option value="admin">Admin</option>
+                                        <option value="user">User</option>
+                                    </select>
+                                    <span class="field-icon">&#9998;</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="modal-confirm-password">ยืนยันรหัสผ่าน</label>
+                                <div class="input-with-icon">
+                                    <input type="password" id="modal-confirm-password" value="●●●●●●●●">
+                                    <span class="field-icon">&#9998;</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+            </div>
+
+            <div class="modal-footer">
+                <button class="confirm-btn">ยืนยัน</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/adminManageUser.js"></script>
+    
+    <script src="js/sidebarAdmin.js"></script>
+
+</body>
+
+</html>

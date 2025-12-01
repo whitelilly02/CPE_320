@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --greenOriginalBottom: linear-gradient(to bottom, #305038, #278133);
+    --greenOriginalRight: linear-gradient(to right, #305038, #278133);
+    --fontColorBlack: rgb(0, 0, 0);
+    --fontColorWhite: rgb(255, 255, 255);
+    --backgroundColor: #E6FFED;
+    --backgroundColorWhite: #ffff;
+}
+
+/* headerSetting */
+
+.userPatientVKORC1Page {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--backgroundColor);
+    margin-left: 350px;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 40px;
+    background-color: var(--backgroundColorWhite);
+}
+
+.header h1 {
+    color: var(--fontColorBlack);
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    border-left: 1px solid #000;
+}
+
+.newPatients {
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    background: #60DB83;
+    color: var(--fontColorBlack);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+/* ============ Main content เนื้อหา============ */
+
+.patient2-content {
+    flex: 1 1 auto;
+    padding: 40px 56px;
+    background: linear-gradient(180deg, #f3fff1 0%, #e1f3db 55%, #d2eccb 100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.patient2-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 32px 56px 28px;
+    margin: -40px -56px 32px;
+    border-bottom: 1px solid rgba(20, 56, 31, 0.14);
+}
+
+.patient2-header h1 {
+    margin: 0;
+    font-size: 48px;
+    color: #111;
+    font-weight: 700;
+}
+
+.patient2-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.patient2-header-separator {
+    width: 2px;
+    height: 42px;
+    background: #000000;
+    border-radius: 1px;
+}
+
+.patient2-search-button {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1.8px solid rgba(34, 104, 58, 0.6);
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(22, 64, 37, 0.18);
+    cursor: pointer;
+}
+
+.patient2-search-button img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.patient2-header-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.patient2-header-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.patient2-header-chip {
+    border: none;
+    border-radius: 24px;
+    padding: 10px 28px;
+    background: #60db83;
+    color: #0d2816;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(22, 64, 37, 0.18);
+}
+
+/* ========== Result Card ========== */
+.result-card {
+    background: #ffffff;
+    border: 2px solid #cccccc;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: calc(100% - 112px);
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+    position: relative;
+}
+
+/* หัวการ์ด */
+.result-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 32px 8px;
+    margin-bottom: 8px;
+}
+
+.result-card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.result-card-title h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f3b1e;
+}
+
+/* ไอคอนวงกลมด้านซ้าย */
+.result-card-icon-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #a8f4a8 0%, #5ed65e 100%);
+    border: 2px solid #4dc44d;
+    box-shadow: 0 4px 8px rgba(77, 196, 77, 0.2);
+}
+
+.result-card-icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ปุ่มพิมพ์ */
+.print-button {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 24px;
+    background: linear-gradient(90deg, #12a541 0%, #0b5b24 100%);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(12, 78, 31, 0.18);
+    cursor: pointer;
+    min-width: 180px;
+    text-align: center;
+}
+
+.print-button:hover {
+    background: linear-gradient(90deg, #14b549 0%, #0d6527 100%);
+}
+
+/* ตัวเนื้อหาการ์ด */
+.result-card-body {
+    padding: 24px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    border: 2px solid #dddddd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.result-meta {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.result-meta .label {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.result-meta .value {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* ========== Table ผลตรวจ ส่วนบน ========== */
+.result-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgba(24, 70, 36, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f5f5f5;
+    font-size: 14px;
+    color: #143820;
+    table-layout: fixed;
+}
+
+.result-info-table th,
+.result-info-table td {
+    border-top: none;
+    border-bottom: 1px solid rgba(24, 70, 36, 0.2);
+    padding: 10px 16px;
+    text-align: left;
+}
+
+.result-info-table th {
+    background: #f5f5f5;
+    font-weight: 700;
+    width: 22%;
+    border-left: none;
+    border-right: none;
+}
+
+.result-info-table td {
+    background: #f5f5f5;
+    font-weight: 600;
+    border-left: none;
+    border-right: none;
+    word-wrap: break-word;
+}
+
+.result-info-table tr:last-child th,
+.result-info-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ลบเส้นคั่นแนวนอน 3 แถวแรก */
+.result-info-table tr:nth-child(-n+3) th,
+.result-info-table tr:nth-child(-n+3) td {
+    border-bottom: none !important;
+}
+
+/* ช่อง input-like */
+.field {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 32px;
+    padding: 4px 14px;
+    border: 1.2px solid #0f341b;
+    border-radius: 6px;
+    background: #f5f5f5;
+    font-size: 14px;
+    color: #111111;
+    box-shadow: none;
+    width: 100%;
+}
+
+/* ===== GENOTYPE BLOCK ===== */
+
+.geno-section {
+    width: 100%;
+    background: #f5f5f5;
+    border-top: none !important;
+}
+
+.geno-row {
+    display: flex;
+    min-height: 36px;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+/* เอาเส้นบนแถวแรกออก (ยีนที่ตรวจ) */
+.geno-row:first-child {
+    border-top: none !important;
+}
+
+/* ซ้าย = Label + Genotype */
+.geno-left {
+    flex: 0 0 38%;
+    display: flex;
+    align-items: center;
+    padding: 6px 16px;
+    gap: 8px;
+}
+
+/* ⭐ เส้นตั้งฝั่งขวาของคอลัมน์ซ้าย (ต่อกันทุกแถว) */
+.geno-row .geno-left {
+    border-right: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+/* ขวา = ช่องว่าง */
+.geno-right {
+    flex: 1;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* indentation Genotype ย่อย */
+.geno-indent {
+    padding-left: 97px;
+}
+
+/* label */
+.geno-label {
+    font-weight: 700;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.geno-text {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* ถ้า label ว่าง ให้ Genotype รองลงมาเยื้องให้ตรงบรรทัดบน */
+.geno-row .geno-label:empty + .geno-text {
+    padding-left: 67px;
+}
+
+@media (max-width: 1280px) {
+    .patient2-content {
+        padding: 36px 32px 48px;
+    }
+}

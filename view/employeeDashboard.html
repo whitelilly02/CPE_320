@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="css/employeeDashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="employeeDashboardPage">
+
+        <div class="div1">
+            <div class="sidebarEmployee" id="sidebarEmployee"></div>
+        </div>
+
+        <div class="div2">
+
+            <div class="top">
+                <div class="topLeft">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="topRight">
+                    <h1>TEAM</h1>
+                </div>
+            </div>
+
+            <div class="center">
+
+                <div class="centerOne">
+                    <h1>Quick Access</h1>
+                </div>
+
+                <div class="centerTwo">
+                    <div class="component-wrapper">
+                        <div class="search-container">
+                            <label for="search-input">ค้นหา</label>
+                            <input type="text" id="search-input" />
+                            <button class="search-btn">ค้นหา</button>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="action-btn">
+                                <i class="fas fa-plus-circle"></i><a class="buttonText" href="employeeDashboardAdd.html">เพิ่มผู้ใช้ใหม่</a>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-crosshairs"></i> สแกนใบสั่งตรวจ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="centerContent">
+
+                    <div class="main-content">
+                        <div class="main-column">
+
+                            <div class="stats-row">
+                                <div class="stat-card card-white textCenter">
+                                    <span class="stat-title">ผู้ตรวจทั้งหมด</span>
+                                    <span class="stat-value">243</span>
+                                </div>
+                                <div class="stat-card card-yellow textCenter">
+                                    <span class="stat-title">รอการยืนยันผลตรวจ</span>
+                                    <span class="stat-value">120</span>
+                                </div>
+                                <div class="stat-card card-green textCenter">
+                                    <span class="stat-title">ยืนยันผลตรวจ</span>
+                                    <span class="stat-value">122</span>
+                                </div>
+                                <div class="stat-card card-red textCenter">
+                                    <span class="stat-title">รอการแก้ไข</span>
+                                    <span class="stat-value">1</span>
+                                </div>
+                            </div>
+
+                            <div class="card" id="bar-chart-card">
+                                <h3>สถิติการเพิ่มผู้ป่วยใหม่</h3>
+                                <div class="chart-placeholder" style="height: 300px;">
+                                    [Placeholder for Bar Chart]
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="secound-column">
+                            <div class="card" id="usage-stats-card">
+                                <h3>สถิติการใช้งานรายวัน</h3>
+                                <ul class="usage-list">
+                                    <li><span>การเข้าใช้งาน</span> <span>12</span></li>
+                                    <li><span>การเพิ่มผู้ป่วย</span> <span>10</span></li>
+                                    <li><span>การยืนยันผลตรวจ</span> <span>23</span></li>
+                                    <li><span>การพิมพ์ไฟล์ส่งตรวจ</span> <span>34</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="card" id="pie-chart-card">
+                                <h3>อัตราการปฏิเสธสิ่งส่งตรวจ</h3>
+                                <div class="chart-placeholder" style="height: 200px;">
+                                    [Placeholder for Pie Chart]
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="main-Right">
+
+                        <div class="card" id="pending-cases-card">
+                            <div class="card-header">
+                                <h3>รายการเคสรอการยืนยันผล</h3>
+                            </div>
+
+                            <ul class="case-list">
+                                <li>
+                                    <span class="case-id"><span class="dot yellow-dot"></span>HN000011</span>
+                                    <span class="case-code">CYPC219</span>
+                                    <span class="case-date">02/10/2568</span>
+                                </li>
+                                <li>
+                                    <span class="case-id"><span class="dot yellow-dot"></span>HN000012</span>
+                                    <span class="case-code">VKORC1</span>
+                                    <span class="case-date">02/10/2568</span>
+                                </li>
+                                <li>
+                                    <span class="case-id"><span class="dot yellow-dot"></span>HN000013</span>
+                                    <span class="case-code">2C19</span>
+                                    <span class="case-date">02/10/2568</span>
+                                </li>
+                                <li>
+                                    <span class="case-id"><span class="dot red-dot"></span>HN000014</span>
+                                    <span class="case-code">2D6 new</span>
+                                    <span class="case-date">02/10/2568</span>
+                                </li>
+                                <li>
+                                    <span class="case-id"><span class="dot green-dot"></span>HN000015</span>
+                                    <span class="case-code">3A5</span>
+                                    <span class="case-date">02/10/2568</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card" id="overdue-cases-card">
+                            <div class="card-header">
+                                <h3>รายการเคสเกินกำหนด</h3>
+                            </div>
+
+                            <ul class="case-list">
+                                <li>
+                                    <span class="case-id">HN000011</span>
+                                    <span class="case-code">CYPC2C9</span>
+                                    <span class="case-status text-red">รอผลเกิน 24 ชม.</span>
+                                </li>
+                                <li>
+                                    <span class="case-id">HN000012</span>
+                                    <span class="case-code">VKGRC1</span>
+                                    <span class="case-status text-red">รอผลเกิน 48 ชม.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <div class="bottomLeft">
+                    <h2>รองรับมาตราฐาน</h2>
+                    <p>ห้องปฏิบัติการนี้ผ่านการรับรองตามมาตรฐานดังต่อไปนี้</p>
+                    <p>X ISO 15189:2022 X ISO/IEC 17025:2017</p>
+                    <p>สำหรับข้อร้องเรียนหรือข้อเสนอแนะ กรุณาติดต่อผู้จัดการฝ่ายประกันคุณภาพ โทร 0-2345-6789 ต่อ 1234
+                    </p>
+                </div>
+                <div class="bottomRight">
+                    <button><a href="employeeKnowledgeA.html">X Knowledge&Info</a></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/sidebarEmployee.js"></script>
+
+</body>
+
+</html>
